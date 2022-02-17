@@ -1,0 +1,490 @@
+/* - - - - - - - - - */
+/* - Rules - */
+@font-face {
+  font-family: "roboto";
+  src: url("fonts/Roboto/Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: "roboto-bold";
+  src: url("fonts/Roboto/Roboto-bold.ttf");
+}
+@font-face {
+  font-family: "fas-regular";
+  src: url("fonts/webfonts/fa-regular-400.ttf");
+}
+@font-face {
+  font-family: "fas-solid";
+  src: url("fonts/webfonts/fa-solid-900.ttf");
+}
+@font-face {
+  font-family: "logo_font";
+  src: url("fonts/Shrikhand/Shrikhand-Regular.ttf");
+}
+@font-face {
+  font-family: "roboto_thin";
+  src: url("fonts/Roboto/Roboto-Thin.ttf");
+}
+@font-face {
+  font-family: "roboto_light";
+  src: url('fonts/Roboto/Roboto-Light.ttf');
+}
+/* - - - - - - - - - */
+/* - Variables - */
+/* dimensions */
+/* ratio des dimensions des thumbnails */
+/* mesurées depuis la maquette */
+/* ratio des li definnisant le bloc fonctionnement */
+/* mesurées depuis la maquette */
+/* color palet */
+/* */
+.fas-regular {
+  font-family: "fas-regular";
+}
+/* - - - - - - - - - */
+/* - Structure HTML - */
+/* elements uniques ! */
+html {
+  font-family: "roboto";
+  scroll-behavior: smooth;
+}
+html body {
+  margin: 0;
+  box-sizing: border-box;
+}
+html body header {
+  display: flex;
+  flex-direction: column;
+  background-color: #f6f6f6;
+}
+html body header nav {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-left: 2.5vw;
+  padding-right: 2.5vw;
+}
+html body main {
+  width: 100vw;
+}
+html body footer {
+  width: 100vw;
+  height: calc(196 / 375 * 100vw);
+  background-color: #353535;
+}
+/* - - - - - - - - - */
+/* - ELEMENT HTML - */
+/* elements duplicables ! */
+/* Section */
+section {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin: auto;
+  padding-bottom: 50px;
+}
+.section--a {
+  background-color: #f6f6f6;
+}
+.section--B {
+  background-color: #f6f6f6;
+  position: relative;
+  top: -10.1333333333vw;
+  border-radius: 10.1333333333vw;
+}
+.section--B h1 {
+  font-family: "logo_font";
+}
+.section--B .titre {
+  font-family: "roboto_thin";
+  text-transform: uppercase;
+}
+/* div */
+div {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+button {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+/* Oranized list */
+ol {
+  display: flex;
+  flex-direction: column;
+  list-style-type: decimal;
+  padding: 0;
+  margin: 0;
+}
+ol li {
+  display: flex;
+  margin-left: 3.2vw;
+  border-radius: 20px;
+  width: 89.3333333333vw;
+  height: 19.2vw;
+  margin-bottom: 15px;
+  background-color: #f6f6f6;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, .1);
+  align-items: center;
+}
+ol li .fas {
+  color: grey;
+}
+ol li:hover {
+  background-color: #f5edff;
+}
+ol li:hover .fas {
+  color: #9356dc;
+}
+ol li .number {
+  width: 6.4vw;
+  height: 6.4vw;
+  background-color: #9356dc;
+  border-radius: 3.2vw;
+  margin-left: -3.2vw;
+  margin-top: auto;
+  margin-bottom: auto;
+  color: white;
+}
+ol li .number span {
+  margin: auto;
+}
+/* Formulaire */
+form {
+  border: none;
+  height: 100%;
+  background-color: transparent;
+  margin: auto;
+  flex-direction: column;
+}
+form input {
+  height: 100%;
+  border: none;
+  color: rgba(0, 0, 0, 1);
+  background-color: transparent;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+/* Titres */
+h3 {
+  padding-top: 20px;
+}
+h4 {
+  padding: 0;
+  margin: 0;
+}
+.fas--fonctionnement {
+  width: calc(73 / 322 * 100%);
+  margin: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+/* - - - - - - - - - */
+/* - Class générales - */
+.info span {
+  margin: auto;
+  font-size: calc(3vw + 3px);
+}
+.info--nouveau {
+  width: calc(80 / 335 * 100%);
+  height: calc(29 / 174 * 100%);
+  background-color: #99e2d0;
+  margin-right: 5%;
+  margin-top: 5%;
+  margin-left: auto;
+  border-radius: 1px;
+  color: #018766;
+  box-shadow: #018766 0px 1px 2px;
+}
+.header--logo {
+  width: 100%;
+  margin: auto;
+  padding: 12px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, .1);
+}
+.header--logo img {
+  width: 50%;
+  margin: auto;
+}
+.container {
+  margin: auto;
+}
+.container--A {
+  margin-left: 2.9333333333vw;
+  margin-right: 2.9333333333vw;
+}
+.container--B {
+  margin-bottom: calc(25 / 375 * 100vw);
+}
+.container .thumb {
+  width: calc(335 / 375 * 100vw);
+  height: calc(251 / 375 * 100vw);
+  border-radius: 20px;
+  margin: auto;
+  margin-bottom: 20px;
+  box-shadow: rgba(0, 0, 0, .2) 0px 0px 10px;
+  position: relative;
+  overflow: hidden;
+}
+.container .thumb--A {
+  position: relative;
+}
+.container .thumb--A .thumb__txt {
+  position: absolute;
+  bottom: 0;
+  background-color: white;
+  width: 100%;
+  height: calc(77 / 251 * 100%);
+}
+.container .thumb--B {
+  width: 93.0666666667vw;
+  height: calc(68 / 375 * 100vw);
+  background-color: white;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  box-shadow: rgba(0, 0, 0, .2) 0px 0px 5px;
+  cursor: grab;
+  overflow: hidden;
+}
+.container .thumb--B .thumb__txt {
+  padding-left: 2.9333333333vw;
+  padding-right: 2.9333333333vw;
+  font-size: calc(2vw + 4px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: transform 600ms;
+  transition-property: transform;
+}
+.container .thumb--B .thumb__txt p {
+  margin: 0;
+  padding: 0;
+}
+.container .thumb--B button {
+  width: 16vw;
+  height: 100%;
+  background: none;
+  border: none;
+  align-self: end;
+  margin-right: -16vw;
+  transition: transform 600ms;
+  transition-property: transform;
+  background-color: #99e2d0;
+}
+.container .thumb--B button .fa-regular {
+  background-image: white;
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: white;
+}
+.container .thumb--B:hover button {
+  transform: translate(-16vw, 0);
+  transform-origin: 50% 50%;
+}
+.container .thumb--B:hover button .fa-regular {
+  transform: rotate(1turn);
+  transition: transform 600ms;
+  transition-property: transform;
+}
+.container .thumb--B:hover .prix {
+  transform: translate(-16vw, 0);
+}
+.container .thumb--B__formLink {
+  height: 100%;
+  display: flex;
+  position: absolute;
+  width: 100%;
+  background: transparent;
+}
+.container .thumb--B__img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+.container .thumb--B__img--b {
+  background-image: url("img/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
+}
+.container .thumb--B__img--c {
+  background-image: url("img/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+}
+.container .thumb--B__img--d {
+  background-image: url("img/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+}
+.container .thumb--B .thumb__txt {
+  flex-direction: row;
+  width: 100%;
+  background-color: white;
+  margin: auto;
+  justify-content: space-between;
+}
+.container .thumb--B .thumb__txt p {
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 5vw;
+}
+/* - - - - - - - - - */
+/* - - - - - - - - - */
+/* - Mise en page générale - */
+.font--150 {
+  font-size: 150%;
+}
+.font--125 {
+  font-size: 125%;
+}
+.font--80 {
+  font-size: 80%;
+}
+.font--70 {
+  font-size: 70%;
+}
+.font--60 {
+  font-size: 60%;
+}
+.font--big {
+  font-size: calc(4vw + 6px);
+}
+.font--bold {
+  font-weight: bold;
+}
+.font--italic {
+  font-style: italic;
+}
+.font--underline {
+  text-decoration: underline;
+}
+.soustitreCarte {
+  color: #353535;
+  font-size: 70%;
+}
+/* - - - - - - - - - */
+/* header & nav */
+#localisation {
+  flex-direction: row;
+}
+#localisation {
+  background-color: #99e2d0;
+  width: 100%;
+  height: 40px;
+}
+.ghost {
+  display: none !important;
+}
+/* flex */
+.flex {
+  display: flex;
+}
+.flexrow {
+  flex-direction: row;
+}
+.flexcolumn {
+  flex-direction: column;
+}
+/* position */
+.absolute {
+  position: absolute;
+}
+.lt--0 {
+  left: 0;
+  top: 0;
+}
+.lt--max {
+  left: 100%;
+  height: 100%;
+}
+.lt--maxvp {
+  left: 100vh;
+  height: 100vh;
+}
+/* margin padding */
+.ultrapadding {
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+.padding--15 {
+  padding: 15px;
+}
+.margin {
+  margin: auto;
+}
+.margin--left0 {
+  margin-left: 0;
+}
+.margin--right0 {
+  margin-right: 0;
+}
+.margin--mediumRight {
+  margin-right: 10.1333333333vw;
+}
+.margin--mediumBottom {
+  margin-bottom: 10.1333333333vw;
+}
+/* size */
+.w100 {
+  width: 100%;
+}
+.size--biggest {
+  width: 100vw;
+  height: 100vh;
+}
+.size--bigger {
+  width: 100%;
+  height: 100%;
+}
+.grapCursor {
+  cursor: grab;
+}
+/* form */
+.hyphen {
+  margin-top: calc(8 / 375 * 100vw);
+  margin-bottom: calc(15 / 375 * 100vw);
+  width: calc(38 / 375 * 100vw);
+  height: 2px;
+  background-color: #99e2d0;
+}
+.bigBlueBtn {
+  width: 58.1333333333vw;
+  height: 13.3333333333vw;
+  background-color: #9356dc;
+  border-radius: 6.6666666667vw;
+  color: white;
+}
+.faTitle:hover {
+  color: #9356dc;
+  font-family: 'fas-solid';
+}
+.faTitle:active {
+  color: #9356dc;
+  font-family: 'fas-solid';
+}
+.menu {
+  width: 100%;
+  margin: auto;
+}
+.menu .titre {
+  font-family: "roboto";
+  text-transform: none;
+}
+.menu .soustitre {
+  font-family: "roboto_light";
+}
+.menu .prix {
+  transition: transform 600ms;
+  transition-property: transform;
+}
+.menu__restoA--entreeA .plat::after {
+  font-family: "roboto-bold";
+  content: "Tartare de poulpe acidulé";
+}
+.menu__restoA--entreeA .soustitre::after {
+  font-family: "roboto";
+  color: rgba(0, 0, 0, .9);
+  content: "Aux zests d'orange";
+}
+.menu__restoA--entreeA .prix::after {
+  font-family: "roboto-bold";
+  content: "25€";
+}

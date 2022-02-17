@@ -1,0 +1,609 @@
+// ! ! ! ! ! ! ! ! ! ! ! !
+// CSS compilé depuis SCSS
+// - -
+
+
+
+
+/* -  - - - - - - -  - */
+/* - Rules - */
+@font-face{
+	font-family: "roboto";
+	src: url("fonts/Roboto/Roboto-Regular.ttf");
+}
+@font-face{
+	font-family: "roboto-bold";
+	src: url("fonts/Roboto/Roboto-bold.ttf");
+}
+
+@font-face{
+  font-family: "fas-regular";
+  src: url("fonts/webfonts/fa-regular-400.ttf");
+}
+@font-face {
+  font-family: "fas-solid";
+  src: url("fonts/webfonts/fa-solid-900.ttf");
+}
+@font-face {
+  font-family: "logo_font";
+  src: url("fonts/Shrikhand/Shrikhand-Regular.ttf");
+}
+@font-face {
+  font-family: "roboto_thin";
+  src: url("fonts/Roboto/Roboto-Thin.ttf");
+}
+@font-face {
+  font-family: "roboto_light";
+  src: url('fonts/Roboto/Roboto-Light.ttf');
+}
+@function ratio_px-vw($width){
+  $virtual: $width / 375 * 100 + 'vw';
+  @return ($virtual);
+}
+
+
+
+/* -  - - - - - - -  - */
+/* - Variables - */
+/* dimensions */
+$negativeNumber: calc(-1);
+
+$thumb-width: calc(335 / 375 * 100vw); /* ratio des dimensions des thumbnails */
+$thumb-height: calc(251 / 375 * 100vw);/* mesurées depuis la maquette */
+
+$li-width: ratio_px-vw(335);   /* ratio des li definnisant le bloc fonctionnement */
+$li-height: ratio_px-vw(72);   /* mesurées depuis la maquette */
+$li-number-dimension:  ratio_px-vw(24);
+$li-number-dimension--half: ratio_px-vw(12);
+$li-number-dimension--negative-half: ratio_px-vw(-12);
+
+$btn_checkMenu-translate: translate(ratio_px-vw(-60) , 0);
+
+$little_gap: ratio_px-vw(11);
+$little_gap--neg: ratio_px-vw(-11);
+$medium_gap: ratio_px-vw(38);
+$medium_gap--neg: ratio_px-vw(-38);
+/* color palet */
+$bluePrimr: #9356DC;
+$blue-btn: #F5EDFF;
+$gris_li: #F6F6F6;
+$colorTert: #99E2D0;
+
+
+/* */
+$txt-thumb-height: calc(77 / 251 * 100%);
+
+.fas-regular{
+  font-family: "fas-regular";
+}
+
+
+
+
+/* -  - - - - - - -  - */
+/* - Structure HTML - */      /* elements uniques ! */
+html{
+  font-family: "roboto";
+  scroll-behavior: smooth;
+  body{
+    margin: 0;
+    box-sizing: border-box;
+    header{
+      display: flex;
+      flex-direction: column;
+      background-color: $gris_li;
+      nav{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-left: 2.5vw;
+        padding-right: 2.5vw;
+      }
+    }
+    main{
+      width: 100vw;
+    }
+    footer{
+      width: 100vw;
+      height: calc(196 / 375 * 100vw);
+      background-color: #353535;
+    }
+  }
+}
+
+
+
+
+/* -  - - - - - - -  - */
+/* - ELEMENT HTML - */        /* elements duplicables ! */
+/* Section */
+section{
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin: auto;
+  padding-bottom: 50px;
+  .&--a{
+    background-color: $gris_li;
+  }
+  .&--B{
+    background-color: $gris_li;
+    position: relative;
+    top: $medium_gap--neg;
+    border-radius: $medium_gap;
+    & h1{
+      font-family: "logo_font";
+    }
+    & .titre{
+      font-family: "roboto_thin";
+      text-transform: uppercase;
+    }
+  }
+}
+
+/* div */
+div{
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+button{
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Oranized list */
+ol{
+  display: flex;
+  flex-direction: column;
+  list-style-type: decimal;
+  padding: 0;
+  margin: 0;
+  & li{
+    display: flex;
+    margin-left: $li-number-dimension--half;
+    border-radius: 20px;
+    width: $li-width;
+    height: $li-height;
+    margin-bottom: 15px;
+    background-color: $gris_li;
+    box-shadow: 0px 5px 5px rgba(0,0,0,.1);
+    align-items: center;
+
+    & .fas{
+      color: grey;
+    }
+    &:hover{
+      background-color: $blue-btn;
+      & .fas{
+        color: $bluePrimr;
+      }
+    }
+    .number{
+      width: $li-number-dimension;
+      height: $li-number-dimension;
+      background-color: $bluePrimr;
+      border-radius: $li-number-dimension--half;
+      margin-left: $li-number-dimension--negative-half;
+      margin-top: auto;
+      margin-bottom: auto;
+      color: white;
+      span{
+        margin: auto;
+      }
+    }
+  }
+}
+
+/* Formulaire */
+form{
+  border: none;
+  height: 100%;
+  background-color: transparent;
+  margin: auto;
+  flex-direction: column;
+  input{
+    height: 100%;
+    border: none;
+    color: rgba(0, 0, 0, 1);
+    background-color: transparent;
+  }
+}
+
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Titres */
+h3{
+  padding-top: 20px;
+}
+h4 {
+  padding: 0;
+  margin: 0;
+}
+
+
+
+.fas--fonctionnement{
+  width: calc(73 / 322 * 100%);
+  margin: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* -  - - - - - - -  - */
+/* - Class générales - */
+.info{
+  & span{
+    margin: auto;
+    font-size: calc(3vw + 3px);
+  }
+  &--nouveau{
+    width: calc(80 / 335 * 100%);
+    height: calc(29 / 174 * 100%);
+    background-color: #99e2d0;
+    margin-right: 5%;
+    margin-top: 5%;
+    margin-left: auto;
+    border-radius: 1px;
+    color: #018766;
+    box-shadow: #018766 0px 1px 2px;
+  }
+}
+
+.header--logo{
+ width: 100%;
+  margin: auto;
+  padding: 12px;
+  box-shadow: 0px 5px 5px rgba(0,0,0,.1);
+  img{
+    width: 50%;
+    margin: auto;
+  }
+}
+
+
+
+.container{
+  margin: auto;
+  &--A{
+    margin-left: $little_gap;
+    margin-right: $little_gap;
+  }
+  &--B{
+    margin-bottom: calc(25 / 375 * 100vw);
+  }
+  
+  & .thumb{
+    width: $thumb-width;
+    height: $thumb-height;
+    border-radius: 20px;
+    margin: auto;
+    margin-bottom: 20px;
+    box-shadow: rgba(0,0,0,.2) 0px 0px 10px;
+    position: relative;
+    overflow: hidden;
+    &--A{
+      position: relative;
+      .thumb__txt{
+        position: absolute;
+        bottom: 0;
+        background-color: white;
+        width: 100%;
+        height: $txt-thumb-height;
+      }
+    }
+    &--B{
+      width: ratio_px-vw(349);
+      height: calc(68 / 375 * 100vw);
+      background-color: white;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      box-shadow: rgba(0,0,0,.2) 0px 0px 5px;
+      cursor: grab;
+      overflow: hidden;
+      & .thumb__txt{
+        padding-left: $little_gap;
+        padding-right: $little_gap;
+        font-size: calc(2vw + 4px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transition: transform 600ms;     
+        transition-property: transform;
+        & p{
+          margin: 0;
+          padding: 0;
+        }
+      }
+  
+      & button{
+        width: ratio_px-vw(60);
+        height: 100%;
+        background: none;
+        border: none;
+        align-self: end;
+        margin-right: ratio_px-vw(-60);
+        transition: transform 600ms;     
+        transition-property: transform;
+        background-color: $colorTert;
+        & .fa-regular{
+          background-image: white;
+          background-clip: border-box;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: white;
+        }
+      }
+      &:hover button{
+        transform:$btn_checkMenu-translate;
+        transform-origin: 50% 50%;
+        & .fa-regular{
+          transform: rotate(1turn);
+          transition: transform 600ms;     
+          transition-property: transform;
+        }
+      }
+      &:hover .prix{
+        transform: $btn_checkMenu-translate;
+      }
+    
+    
+      &__formLink{
+        height: 100%;
+        display: flex;
+        position: absolute;
+        width: 100%;
+        background: transparent;
+      }
+      &__img{
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        &--b{
+          background-image: url("img/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
+        }
+        &--c{
+          background-image: url("img/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+        }
+        &--d{
+          background-image: url("img/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+        }
+      }
+      & .thumb__txt{
+        flex-direction: row;
+        width: 100%;
+        background-color: white;
+        margin: auto;
+        justify-content: space-between;
+        & p{
+          display: flex;
+          margin-top: auto;
+          margin-bottom: auto;
+          margin-right: 5vw;
+        }
+      }
+    }
+  }
+}
+/* -  - - - - - - -  - */
+
+
+
+
+
+
+
+
+
+// ____________ ! IMPORT ! ____________
+// ____________________________________
+/* -  - - - - - - -  - */
+/* - Mise en page générale - */
+
+
+.font{
+  &--150{
+    font-size: 150%;
+  }
+  &--125{
+    font-size: 125%;
+  }
+  &--80{
+    font-size: 80%;
+  }
+  &--70{
+    font-size: 70%;
+  }
+  &--60{
+    font-size: 60%;
+  }
+  &--big{
+    font-size: calc(4vw + 6px);
+  }
+  &--bold{
+    font-weight: bold;
+  }
+  &--italic{
+    font-style: italic;
+  }
+  &--underline{
+    text-decoration: underline;
+  }
+}
+.soustitreCarte{
+  color: #353535;
+  font-size: 70%;
+}
+
+
+
+
+
+/* -  - - - - - - -  - */
+/* header & nav */
+
+
+#localisation{
+  flex-direction: row;
+}
+#localisation{
+  background-color: #99E2D0;
+  width: 100%;
+  height: 40px;
+}
+
+
+.ghost{
+  display: none !important;
+}
+/* flex */
+.flex{
+  display: flex;
+}
+.flexrow {
+  flex-direction: row;
+}
+.flexcolumn {
+  flex-direction: column;
+}
+
+/* position */ 
+.absolute {
+  position: absolute;
+}
+.lt--0 {
+  left: 0;
+  top: 0;
+}
+.lt--max {
+  left: 100%;
+  height: 100%;
+}
+.lt--maxvp {
+  left: 100vh;
+  height: 100vh;
+}
+
+/* margin padding */
+.ultrapadding{
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+.padding--15{
+  padding: 15px;
+}
+
+.margin{
+  margin: auto;
+  &--left0{
+    margin-left: 0;
+  }
+  &--right0{
+    margin-right: 0;
+  }
+  &--mediumRight{
+    margin-right: $medium_gap;
+  }
+  &--mediumBottom{
+    margin-bottom: $medium_gap;
+  }
+}
+
+/* size */
+.w100{
+  width: 100%;
+}
+
+.size{
+  &--biggest{
+    width: 100vw;
+    height: 100vh;
+  }
+  &--bigger{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.grapCursor{
+  cursor: grab;
+}
+
+// ____________________________________
+// ____________________________________
+
+
+
+
+
+
+
+
+
+/* form */
+.hyphen{
+  margin-top: calc(8 / 375 * 100vw);
+  margin-bottom: calc(15 / 375 * 100vw);
+  width: calc(38 / 375 * 100vw);
+  height: 2px;
+  background-color: #99e2d0;
+}
+
+.bigBlueBtn{
+  width: ratio_px-vw(218);
+  height: ratio_px-vw(50);
+  background-color: $bluePrimr;
+  border-radius: ratio_px-vw(25);
+  color: white;
+}
+
+.faTitle{
+  &:hover{
+    color: $bluePrimr;
+    font-family: 'fas-solid';
+  }
+  &:active{
+    color: $bluePrimr;
+    font-family: 'fas-solid';
+  }
+}
+
+
+
+.menu{
+  width: 100%;
+  margin: auto;
+  & .titre{
+    font-family: "roboto";
+    text-transform: none;
+  }
+  & .soustitre {
+    font-family: "roboto_light";
+  }
+  & .prix {
+    transition: transform 600ms;     
+    transition-property: transform;
+  }
+  &__restoA{
+    &--entreeA{
+      & .plat::after{
+        font-family: "roboto-bold";
+        content: "Tartare de poulpe acidulé";
+      }
+      & .soustitre::after{
+        font-family: "roboto";
+        color: rgba(#000000, .9);
+        content: "Aux zests d'orange";
+      }
+      & .prix::after{
+        font-family: "roboto-bold";
+        content: "25€";
+      }
+    }
+  }
+}
