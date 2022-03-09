@@ -1,0 +1,855 @@
+// ! ! ! ! ! ! ! ! ! ! ! !
+// CSS compilé depuis SCSS
+// - -
+
+
+
+
+
+// FONTS
+//fas
+@font-face{
+  font-family: "fas-regular";
+  src: url("fonts/webfonts/fa-regular-400.ttf");
+}
+@font-face {
+  font-family: "fas-solid";
+  src: url("fonts/webfonts/fa-solid-900.ttf");
+}
+
+//roboto
+@font-face{
+	font-family: "roboto";
+	src: url("fonts/Roboto/Roboto-Regular.ttf");
+}
+@font-face{
+	font-family: "roboto-bold";
+	src: url("fonts/Roboto/Roboto-bold.ttf");
+}
+@font-face {
+  font-family: "roboto_thin";
+  src: url("fonts/Roboto/Roboto-Thin.ttf");
+}
+@font-face {
+  font-family: "roboto_light";
+  src: url('fonts/Roboto/Roboto-Light.ttf');
+}
+
+@font-face {
+  font-family: "logo_font";
+  src: url("fonts/Shrikhand/Shrikhand-Regular.ttf");
+}
+
+
+
+
+
+
+// FONCTIONS !
+@function convert_px-vw($width){
+  $virtual: calc($width / 375 * 100vw);
+  @return ($virtual);
+}
+
+
+/* -  - - - - - - -  - */
+
+
+
+/* - Variables - */
+/* dimensions */
+$negativeNumber: calc(-1);
+
+$keyframeDuration: 1200ms;
+//$keyframeDuration: 7200ms;
+$opacity: 0;
+
+$thumb-width: calc(335 / 375 * 100vw); /* ratio des dimensions des thumbnails */
+$thumb-height: calc(251 / 375 * 100vw);/* mesurées depuis la maquette */
+$thumb-width-reduce: calc(235 / 375 * 100vw);
+
+$li-width: convert_px-vw(335);   /* ratio des li definnisant le bloc fonctionnement */
+$li-height: convert_px-vw(72);   /* mesurées depuis la maquette */
+$li-number-dimension:  convert_px-vw(24);
+$li-number-dimension-half: convert_px-vw(12);
+$li-number-dimension-negative-half: convert_px-vw(-12);
+
+$btn_checkMenu-translate: translate(convert_px-vw(-60) , 0);
+
+$little_gap: convert_px-vw(11);
+$little_gap-neg: convert_px-vw(-11);
+$medium_gap: convert_px-vw(38);
+$medium_gap-neg: convert_px-vw(-38);
+/* color palet */
+$bluePrimr: #9356DC;
+$blue-btn: #F5EDFF;
+$gris_li: #F6F6F6;
+$colorTert: #99E2D0;
+$grey234: #eaeaea;
+$grey180: #b4b4b4;
+
+$pourctnull: 0;
+$pourct10: .1;
+$pourct20: .2;
+$pourct30: .3;
+$pourct40: .4;
+$pourct50: .5;
+$pourct60: .6;
+$pourct70: .7;
+$pourct80: .8;
+$pourct90: .9;
+$pourctmax: 1;
+
+
+
+
+/* */
+$txt-thumb-height: calc(77 / 251 * 100%);
+
+.fas-regular{
+  font-family: "fas-regular";
+}
+
+
+
+
+
+
+
+
+
+// ____________ ! ULTRA ! _____________
+// ____________________________________
+.font{
+  &-left{
+    text-align: left;
+  }
+  &-150{
+    font-size: 150%;
+  }
+  &-125{
+    font-size: 125%;
+  }
+  &-90{
+    font-size: 90%;
+  }
+  &-80{
+    font-size: 80%;
+  }
+  &-70{
+    font-size: 70%;
+  }
+  &-60{
+    font-size: 60%;
+  }
+  &-big{
+    font-size: calc(4vw + 6px);
+  }
+  &-bold{
+    font-weight: bold;
+  }
+  &-italic{
+    font-style: italic;
+  }
+  &-underline{
+    text-decoration: underline;
+  }
+  &-littleMarginTB{
+    margin-top: $medium_gap;
+    margin-bottom: $little_gap;
+  }
+}
+.soustitreCarte{
+  color: #353535;
+  font-size: 70%;
+}
+
+.greyBk{
+  background-color: #eaeaea;
+}
+
+
+
+/* -  - - - - - - -  - */
+/* header & nav */
+
+
+
+
+
+.ghost{
+  display: none !important;
+}
+/* flex */
+.flex{
+  display: flex;
+}
+.flexrow {
+  flex-direction: row;
+}
+.flexcolumn {
+  flex-direction: column;
+}
+
+/* position */ 
+.absolute {
+  position: absolute;
+}
+.lt-0 {
+  left: 0;
+  top: 0;
+}
+.lt-max {
+  left: 100%;
+  height: 100%;
+}
+.lt-maxvp {
+  left: 100vh;
+  height: 100vh;
+}
+
+/* margin padding */
+.ultrapadding{
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+.ultrapaddingNS{
+  padding-top: 5vw;
+  padding-bottom: 5vw;
+}
+.padding-15{
+  padding: 15px;
+}
+
+.margin{
+  margin: auto;
+  &-left0{
+    margin-left: 0;
+  }
+  &-right0{
+    margin-right: 0;
+  }
+  &-mediumRight{
+    margin-right: $medium_gap;
+  }
+  &-mediumBottom{
+    margin-bottom: $medium_gap;
+  }
+}
+
+/* size */
+.w100{
+  width: 100%;
+}
+.w70{
+  width: 70%;
+}
+.vw100{
+  width: 100vw;
+}
+.h100{
+  height: 100%;
+}
+.vh100{
+  height: 100vh;
+}
+
+.size{
+  &-biggest{
+    width: 100vw;
+    height: 100vh;
+  }
+  &-bigger{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.grapCursor{
+  cursor: grab;
+}
+
+.white{
+  color: white;
+}
+// ____________________________________
+// __________ ! end ultra ! ___________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -  - - - - - - -  - */
+/* - Structure HTML - */      /* elements uniques ! */
+html{
+  font-family: "roboto";
+  scroll-behavior: smooth;
+  background-color: red;
+  body{
+    margin: 0;
+    box-sizing: border-box;
+    header{
+      display: flex;
+      flex-direction: column;
+      background-color: rgba($gris_li, $pourct10);
+      nav{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-left: 2.5vw;
+        padding-right: 2.5vw;
+        width: 70%;
+      }
+    }
+    main{
+      width: 100vw;
+      overflow: hidden;
+    }
+    footer{
+      width: 100vw;
+      height: calc(196 / 375 * 100vw);
+      background-color: #353535;
+    }
+  }
+}
+
+
+
+
+/* -  - - - - - - -  - */
+/* - ELEMENT HTML - */        /* elements duplicables ! */
+/* Section */
+section{
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin: auto;
+  padding-bottom: 50px;
+  &.section-a{
+    background-color: $gris_li;
+  }
+  &.section-B{
+    background-color: $gris_li;
+    position: relative;
+    top: $medium_gap-neg;
+    border-radius: $medium_gap;
+    animation-name: _beCorner;
+    animation-duration: $keyframeDuration;
+    animation-fill-mode: both;
+    @keyframes _beCorner {
+      0% {
+       background-color: white;
+        
+      }
+      100%{
+        background-color: $gris_li;
+      }
+    }
+    & h1{
+      font-family: "logo_font";
+    }
+    & .titre{
+      font-family: "roboto_thin";
+      text-transform: uppercase;
+    }
+  }
+}
+
+/* div */
+div{
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+p{
+  text-overflow: ellipsis;
+}
+
+button{
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+
+/* Oranized list */
+ol{
+  display: flex;
+  flex-direction: column;
+  list-style-type: decimal;
+  padding: 0;
+  margin: 0;
+  & li{
+    display: flex;
+    margin-left: $li-number-dimension-half;
+    border-radius: 20px;
+    width: $li-width;
+    height: $li-height;
+    margin-bottom: 15px;
+    background-color: $gris_li;
+    box-shadow: 0px 5px 5px rgba(0,0,0,.1);
+    align-items: center;
+
+    & .fas{
+      color: grey;
+    }
+    &:hover{
+      background-color: $blue-btn;
+      & .fas{
+        color: $bluePrimr;
+      }
+    }
+    .number{
+      width: $li-number-dimension;
+      height: $li-number-dimension;
+      background-color: $bluePrimr;
+      border-radius: $li-number-dimension-half;
+      margin-left: $li-number-dimension-negative-half;
+      margin-top: auto;
+      margin-bottom: auto;
+      color: white;
+      span{
+        margin: auto;
+      }
+    }
+  }
+}
+
+/* Formulaire */
+form{
+  border: none;
+  height: 100%;
+  background-color: transparent;
+  margin: auto;
+  flex-direction: column;
+  input{
+    height: 100%;
+    border: none;
+    color: rgba(0, 0, 0, 1);
+    background-color: transparent;
+    opacity: 1;
+  }
+  & i{
+    animation-duration: $keyframeDuration;
+    animation-name: _rotate;
+    transition: rotate;
+    animation-fill-mode: both;
+    @keyframes _rotate {
+      from {
+        rotate: 1.5turn;
+      }
+    
+      to {
+        rotate: 0turn;
+      }
+    }
+  }
+}
+
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Titres */
+h3{
+  padding: 0;
+  margin: 0;
+}
+h4 {
+  padding: 0;
+  margin: 0;
+}
+
+
+
+.fas-fonctionnement{
+  width: calc(73 / 322 * 100%);
+  margin: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* -  - - - - - - -  - */
+/* - Class générales - */
+.info{
+  & span{
+    margin: auto;
+    font-size: calc(3vw + 3px);
+  }
+  &-nouveau{
+    width: calc(80 / 335 * 100%);
+    height: calc(29 / 174 * 100%);
+    background-color: #99e2d0;
+    margin-right: 5%;
+    margin-top: 5%;
+    margin-left: auto;
+    border-radius: 1px;
+    color: #018766;
+    box-shadow: #018766 0px 1px 2px;
+  }
+}
+
+.header-logo{
+ width: 100%;
+  margin: auto;
+  padding: 12px;
+  box-shadow: 0px 5px 5px rgba(0,0,0,.1);
+  & img{
+    animation-name: _negativeScale;
+    animation-duration: $keyframeDuration;
+    animation-fill-mode: both;
+    @keyframes _negativeScale {
+      from{
+        scale: .6;
+      }
+      to{
+        scale: .5;
+      }
+    }
+
+    img{
+      width: 50%;
+      margin: auto;
+    }
+  }
+}
+
+
+
+.container{
+  margin: auto;
+  &-A{
+    margin-left: $little_gap;
+    margin-right: $little_gap;
+  }
+  &-B{
+    margin-bottom: convert_px-vw(25);
+  }
+  
+  & .thumb{
+    opacity: .95;
+    width: $thumb-width;
+    height: $thumb-height;
+    border-radius: 20px;
+    margin: auto;
+    margin-bottom: 20px;
+    box-shadow: rgba(0,0,0,.2) 0px 0px 10px;
+    position: relative;
+    overflow: hidden;
+    &:hover{
+      opacity: 1;
+    }
+    &-A{
+      position: relative;
+      .thumb__txt{
+        position: absolute;
+        bottom: 0;
+        background-color: white;
+        width: 100%;
+        height: $txt-thumb-height;
+      }
+      &:hover img{
+        scale: 1.1;
+        transition: transform 700ms;     
+        transition-property: scale;
+      }
+    }
+    &-B{
+      width: convert_px-vw(349);
+      height: calc(68 / 375 * 100vw);
+      background-color: white;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      box-shadow: rgba(0,0,0,.2) 0px 0px 5px;
+      cursor: grab;
+      overflow: hidden;
+      & .thumb__txt{
+        padding-left: $little_gap;
+        padding-right: $little_gap;
+        font-size: calc(2vw + 4px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transition: transform 600ms;     
+        transition-property: transform;
+        & p{
+          margin: 0;
+          padding: 0;
+        }
+      }
+  
+      & button{
+        width: convert_px-vw(60);
+        height: 100%;
+        background: none;
+        border: none;
+        align-self: end;
+        margin-right: convert_px-vw(-60);
+        transition: transform 600ms;     
+        transition-property: transform;
+        background-color: $colorTert;
+        & .fa-regular{
+          background-image: white;
+          background-clip: border-box;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: white;
+        }
+      }
+      &:hover button{
+        transform:$btn_checkMenu-translate;
+        transform-origin: 50% 50%;
+        & .fa-regular{
+          transform: rotate(1turn);
+          transition: transform 600ms;     
+          transition-property: transform;
+        }
+      }
+      &:hover .prix{
+        transform: $btn_checkMenu-translate;
+      }
+      
+      
+    
+    
+      &__formLink{
+        height: 100%;
+        display: flex;
+        position: absolute;
+        width: 100%;
+        background: transparent;
+      }
+      &__img{
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        &-b{
+          background-image: url("img/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
+        }
+        &-c{
+          background-image: url("img/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+        }
+        &-d{
+          background-image: url("img/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+        }
+      }
+      & .thumb__txt{
+        flex-direction: row;
+        width: 100%;
+        background-color: white;
+        margin: auto;
+        justify-content: space-between;
+        & p{
+          display: flex;
+          margin-top: auto;
+          margin-bottom: auto;
+        }
+      }
+      &:hover .textThumb{
+        max-width: $thumb-width-reduce;
+      }
+    }
+  }
+}
+/* -  - - - - - - -  - */
+
+
+
+
+
+
+
+/* formes */
+.hyphen{
+  margin-top: calc(8 / 375 * 100vw);
+  margin-bottom: calc(15 / 375 * 100vw);
+  width: calc(38 / 375 * 100vw);
+  height: 2px;
+  background-color: #99e2d0;
+}
+
+.bigBlueBtn{
+  width: convert_px-vw(218);
+  height: convert_px-vw(50);
+  background-color: $bluePrimr;
+  border-radius: convert_px-vw(25);
+  color: white;
+  cursor: pointer;
+  animation-duration: $keyframeDuration;
+  animation-name: _toBkBlue;
+  transition: background-color;
+  @keyframes _toBkBlue {
+    from {
+      background-color: $gris_li;
+    }
+  
+    to {
+      background-color: $bluePrimr
+    }
+  }
+}
+
+.faTitle{
+  &:hover{
+    font-family: 'fas-solid';
+    cursor: pointer;
+    animation-name: _bkBlue, _scale;
+    animation-duration: 350ms;
+    animation-fill-mode: both;
+    @keyframes _bkBlue {
+      from{
+        color: $gris_li;
+      }
+      to{
+        color: $bluePrimr;
+      }
+    }
+  }
+  
+  &:active{
+    color: $bluePrimr;
+    font-family: 'fas-solid';
+  }
+ 
+}
+
+.localisationBar{
+  background-color: rgba($gris_li, $pourct90);
+}
+
+.menu{
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  & .titre{
+    font-family: "roboto";
+    text-transform: none;
+  }
+  & .soustitre {
+    font-family: "roboto_light";
+  }
+  & .prix {
+    transition: transform 600ms;     
+    transition-property: transform;
+  }
+}
+
+.logo_font{
+  font-family: "logo_font";
+}
+
+.element{
+  animation-duration: $keyframeDuration;
+  animation-name: backup;
+  opacity: 0;
+  transition: opacity;
+  animation-fill-mode: both;
+  transition-delay: 150ms;
+  &-a{
+    animation-delay: 0ms;
+  }
+  &-b{
+    animation-delay: 180ms;
+  }
+  &-c{
+    animation-delay: 360ms;
+  }
+  &-c{
+    animation-delay: 540ms;
+  }
+  &-d{
+    animation-delay: 720ms;
+  }
+  @keyframes backup {
+    from {
+      opacity: 0;
+      transform: translate(0, 10px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translate(0, 0px);
+    }
+  }
+}
+
+
+.fas{
+  font-size: 120%;
+}
+
+.textEllipsis{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.imgTopResto{
+  animation-name: _scale, _opacityUp;
+  animation-duration: $keyframeDuration;
+  animation-fill-mode: both;
+  max-height: convert_px-vw(258);
+  @keyframes _scale {
+    from{
+      scale: 1;
+    }
+    to{
+      scale: 1.2;
+    }
+  }
+}
+
+.titre{
+  animation-name: _opacityUp;
+  animation-duration: $keyframeDuration;
+  animation-fill-mode: both;
+  @keyframes _opacityUp {
+    from{
+      opacity: 0;
+    }
+    to{
+      opacity: 1;
+    }
+  }
+}
+.groupThumbs{
+  margin: auto;
+}
+
+//$ sass css/style.sass:css/form.css -watch
+//flexgrow
+//media q bootstrap
+
+
+@media screen and (min-width: 738px)
+{
+  .container {
+    flex-direction: row;
+    & .thumb{
+      width: calc(335 / 2.5 / 375 * 100vw);
+      height: calc(251 / 2.5 / 375 * 100vw);
+      margin: auto;
+    }
+  }
+}
+
+@media screen and (min-width: 1080px)
+{
+  .container {
+    flex-direction: row;
+  }
+  .groupThumbs{
+    flex-direction: row;
+  }
+}

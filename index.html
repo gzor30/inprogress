@@ -12,32 +12,31 @@
   <body>
     <header>
       <!-- headerTop-->
-      <div class="header--logo">
+      <div class="header-logo">
         <img class="img" src="css/img/logo/ohmyfood.png"/>
       </div>
 
       <!-- localisation -->
-      <div id="localisation">
-        <div class="margin">
-          <i class="fas fa-map-marker-alt" style="text-align: center; width: 100%;">
-					</i>
-        </div>
-        <form>
-          <input type="text" placeholder=" Paris, Belleville" name="localisation">
+      <div id="localisation" class="localisationBar flexrow ultrapaddingNS">
+        <form class="flex flexrow">
+          <i class="fas fa-map-marker-alt" style="text-align: center; width: 100%;"></i>&emsp;
+          <input type="text" placeholder=" Paris, Belleville" name="localisation" class="font-bold black">
         </form>
       </div>
       
       <!-- navigation -->
-      <nav>
+      <nav class="margin">
         <h2>
           Réservez le menu qui vous convient
         </h2>
-        <p>
+        <p class="text_header">
           Découvrez des restaurants d'exception séléctionnée par nos soins.
         </p>
         <a href="#restaurants">
-          <div class="bigBlueBtn margin margin--mediumBottom "> 
-            <span class="margin font--bold">Explorer nos restaurants </span>
+          <div class="bigBlueBtn font-90 margin margin-mediumBottom "> 
+            <span class="btn margin font-bold">
+              Explorer nos restaurants
+            </span>
           </div>
         </a>
       </nav>
@@ -49,87 +48,88 @@
     <main>
       <!-- headerBottom-->
       <section class="bigbloc-a ultraPadding">
-        <div class="container">
-          <h3>
+        <div class="container container-A  container-padding">
+          <h3 class="font-littleMarginTB">
             Fonctionnement
           </h3>
         </div>
         <div class="container">
           <ol>
-            <li>
+            <li class="element element-a">
               <div class="number">
-                <span class="font--70 margin">
+                <span class="font-70 margin">
                   1
                 </span>
               </div>
         
-              <div class="fas--fonctionnement">
+              <div class="fas-fonctionnement">
                 <i class="flex_row margin fas fa-mobile-screen-button">
                   </i>
               </div>
 
               <div class="under-li-div">
-                <p class="flex_row margin">
+                <span class="flex_row margin font-bold font-90">
                   Choisissez un restaurant
-                </p>
+                </span>
               </div>
             </li>
             
-            <li>
+            <li class="element element-b">
               <div class="number"> 
-                <span class="font--70 margin">
+                <span class="font-70 margin font-bold">
                   2
                 </span>
               </div>
 
-              <div class="fas--fonctionnement">
+              <div class="fas-fonctionnement">
                 <i class="margin fas fa-list-ul">
                 </i>
               </div>
 
               <div>
-                <p>
+                <span class=" font-bold font-90">
                   Composez votre menu
-                </p>
+                </span>
               </div>
             </li>
             
-            <li>
+            <li class="element element-c">
               <div class="number">
-                <span class="font--70 margin">
+                <span class="font-70 margin">
                   3
                 </span>
               </div>
 
-              <div class="fas--fonctionnement">
+              <div class="fas-fonctionnement">
                 <i class="flex_row margin fas fa-shop">
                 </i>
               </div>
 
               <div>
-                <p>
+                <span class="font-bold font-90">
                   Dégustez au restaurant
-                </p>
+                </span>
               </div>
             </li>
           </ol>
         </div>
       </section>
       
-      <section id="restaurants" class="section--a">
+      <section id="restaurants" class="section-a">
         <!-- restaurants -->
-        <div class="container container--A  container--padding">
-          <h3>
+        <div class="container container-A  container-padding">
+          <h3 class="font-littleMarginTB">
             Restaurants
           </h3>
         </div>
 
-        <div class="container container--A container--padding">
+        <div class="container container-A container-padding">
+          <div class="groupThumbs">
           <a href="unders/laPaletteDuGout.html">
-            <div class="thumb thumb--A">
-              <div class="thumb__img thumb__img--a">
+            <div class="thumb margin thumb-A element element-a">
+              <div class="thumb__img thumb__img-a">
                 <img src="css/img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" />
-                <div class="info info--nouveau">
+                <div class="info info-nouveau">
                   <span>
                     &nbsp;Nouveau&nbsp;
                   </span>
@@ -138,12 +138,12 @@
 
               <div class="thumb__txt ultrapadding">
                 <div class="flexrow menu">
-                  <p class="flex flexcolumn  "> 
-                    <span class="font--150 font--bold"> La palette du goût </span>
-                    <span class="flex margin margin--left0 soustitre"> Ménilmontant </span>
+                  <p class="flex flexcolumn margin margin-left0 margin marginleft0  "> 
+                    <span class="font-100 font-bold"> La palette du goût </span>
+                    <span class="flex margin margin-left0 soustitre"> Ménilmontant </span>
                   </p>
-                  <span class="flex prix font--bold font--125 margin margin--right0">
-                    <i class="fa-regular fa-heart"></i>
+                  <span class="flex prix font-bold font-125 margin margin-right0">
+                    <i class="fa-regular fa-heart faTitle"></i>
                   </span>
                 </div>
               </div>
@@ -151,10 +151,10 @@
           </a>
 
           <a href="unders/laNoteEnchantee.html">
-            <div class="thumb thumb--A">
-              <div class="thumb__img thumb__img--a">
+            <div class="thumb thumb-A margin element element-b">
+              <div class="thumb__img thumb__img-a">
                 <img src="css/img/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" />
-                <div class="info info--nouveau">
+                <div class="info info-nouveau">
                   <span>
                     &nbsp;Nouveau&nbsp;
                   </span>
@@ -163,68 +163,64 @@
 
               <div class="thumb__txt ultrapadding">
                 <div class="flexrow menu">
-                  <p class="flex flexcolumn  "> 
-                    <span class="font--150 font--bold"> La note enchantée </span>
-                    <span class="flex margin margin--left0 soustitre"> Charonne </span>
+                  <p class="flex flexcolumn margin margin-left0 margin marginleft0  "> 
+                    <span class="font-100 font-bold"> La note enchantée </span>
+                    <span class="flex margin margin-left0 soustitre"> Charonne </span>
                   </p>
-                  <span class="flex prix font--bold font--125 margin margin--right0">
-                    <i class="fa-regular fa-heart"></i>
+                  <span class="flex prix font-bold font-125 margin margin-right0">
+                    <i class="fa-regular fa-heart faTitle"></i>
                   </span>
                 </div>
               </div>
             </div>
           </a>
+          </div>
           
+          <div class="groupThumbs">
           <a href="unders/aLaFrancaise.html">
-            <div class="thumb thumb--A">
-              <div class="thumb__img thumb__img--a">
+            <div class="thumb thumb-A margin element element-c">
+              <div class="thumb__img thumb__img-a">
                 <img src="css/img/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" />
-                <!--
-                <div class="info info--nouveau">
+                <div class="info info-nouveau">
                   <span>
                     &nbsp;Nouveau&nbsp;
                   </span>
                 </div>
-                -->
               </div>
 
               <div class="thumb__txt ultrapadding">
                 <div class="flexrow menu">
-                  <p class="flex flexcolumn  "> 
-                    <span class="font--150 font--bold"> À la française </span>
-                    <span class="flex margin margin--left0 soustitre"> Cité Rouge </span>
+                  <p class="flex flexcolumn margin margin-left0 margin marginleft0"> 
+                    <span class="font-100 font-bold"> À la française </span>
+                    <span class="flex margin margin-left0 soustitre"> Cité Rouge </span>
                   </p>
-                  <span class="flex prix font--bold font--125 margin margin--right0">
-                    <i class="fa-regular fa-heart"></i>
+                  <span class="flex prix font-bold font-125 margin margin-right0">
+                    <i class="fa-regular fa-heart faTitle"></i>
                   </span>
                 </div>
               </div>
             </div>
           </a>
           
-
-
           <a href="unders/leDeliceDesSens.html">
-            <div class="thumb thumb--A">
-              <div class="thumb__img thumb__img--a">
+            <div class="thumb thumb-A margin element element-d">
+              <div class="thumb__img thumb__img-a">
                 <img src="css/img/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" />
-                <!--
-                <div class="info info--nouveau">
+                <div class="info info-nouveau">
                   <span>
                     &nbsp;Nouveau&nbsp;
                   </span>
                 </div>
-                -->
               </div>
 
               <div class="thumb__txt ultrapadding">
                 <div class="flexrow menu">
-                  <p class="flex flexcolumn  "> 
-                    <span class="font--150 font--bold"> Le délice des sens </span>
-                    <span class="flex margin margin--left0 soustitre"> Folie-Méricourt </span>
+                  <p class="flex flexcolumn margin margin-left0 margin marginleft0  "> 
+                    <span class="font-100 font-bold"> Le délice des sens </span>
+                    <span class="flex margin margin-left0 soustitre"> Folie-Méricourt </span>
                   </p>
-                  <span class="flex prix font--bold font--125 margin margin--right0">
-                    <i class="fa-regular fa-heart"></i>
+                  <span class="flex prix font-bold font-125 margin margin-right0">
+                    <i class="fa-regular fa-heart faTitle"></i>
                   </span>
                 </div>
               </div>
@@ -236,7 +232,24 @@
       </section>
     </main>
 
-    <footer>
+    <footer class="ultrapadding white">
+      <h2 class="logo_font"> ohmyfood </h2>
+      <p class="flex flexcolumn margin margin-left0 margin marginleft0 margin">
+        <span>
+          <i class="fas-regular fa-utensils"></i>
+          Proposer un restaurant
+        </span>
+        <span>
+          <i class="fas-regular fa-handshake-angle"></i>
+          Devenir partenaire
+        </span>
+        <span>
+          Mentions légales
+        </span>
 
+        <span>
+          Contact
+        </span>
+      </p>
     </footer>
   </body>
