@@ -195,6 +195,14 @@
   color: white;
 }
 
+@keyframes _void {
+  from {
+    display: flex;
+  }
+  to {
+    opacity: 0;
+  }
+}
 .loader {
   position: absolute;
   width: 20vw;
@@ -206,21 +214,13 @@
   animation-duration: 400ms;
   animation-fill-mode: both;
 }
-@keyframes _void {
-  from {
-    display: flex;
-  }
-  to {
-    opacity: 0;
-  }
-}
 .loader-item {
   position: absolute;
   width: 50%;
   height: 50%;
-  background: radial-gradient(blue, blue, transparent 50%, transparent);
 }
 .loader-item-a {
+  background: radial-gradient(#9356DC, #9356DC, transparent 50%, transparent);
   animation-name: _loader-item-a;
   animation-duration: 1800ms;
   animation-delay: 100ms;
@@ -274,6 +274,7 @@
   }
 }
 .loader-item-b {
+  background: radial-gradient(#b4b4b4, #b4b4b4, transparent 50%, transparent);
   bottom: 0;
   animation-name: _loader-item-b;
   animation-duration: 1800ms;

@@ -277,11 +277,18 @@ $txt-thumb-height: calc(77 / 251 * 100%);
 // ____________________________________
 // __________ ! end ultra ! ___________
 
+@keyframes _void {
+  from{
+    display: flex;
+  }
+  to{
+    opacity: 0;
+  }
+}
 
 
 
-
-.loader{ 
+.loader{
   position: absolute;
   width: 20vw;
   height: 20vw;
@@ -291,20 +298,12 @@ $txt-thumb-height: calc(77 / 251 * 100%);
   animation-delay: $loaderDuration;
   animation-duration: 400ms;
   animation-fill-mode: both;
-  @keyframes _void {
-    from{
-      display: flex;
-    }
-    to{
-      opacity: 0;
-    }
-  }
   &-item{ 
     position: absolute;
     width: 50%;
     height: 50%;
-    background: radial-gradient(blue, blue, transparent 50%, transparent);
     &-a{
+      background: radial-gradient($bluePrimr, $bluePrimr, transparent 50%, transparent);
       animation-name: _loader-item-a;
       animation-duration: $loaderDuration;
       animation-delay: 100ms;
@@ -361,6 +360,7 @@ $txt-thumb-height: calc(77 / 251 * 100%);
       }
     }
     &-b{
+      background: radial-gradient($grey180, $grey180, transparent 50%, transparent);
       bottom: 0;animation-name: _loader-item-b;
       animation-duration: $loaderDuration;
       animation-delay: 200ms;
