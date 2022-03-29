@@ -226,53 +226,6 @@
   animation-delay: 100ms;
   animation-fill-mode: both;
 }
-@keyframes _loader-item-a {
-  0% {
-    scale: 0;
-    margin-left: 50%;
-    margin-top: 0%;
-  }
-  10% {
-    scale: 0.4;
-  }
-  20% {
-    scale: 1;
-    margin-left: 0%;
-    margin-top: 50%;
-  }
-  30% {
-    scale: 0.5;
-  }
-  40% {
-    scale: 1;
-    margin-left: 50%;
-    margin-top: 0%;
-  }
-  50% {
-    scale: 0.6;
-  }
-  60% {
-    scale: 1;
-    margin-left: 0%;
-    margin-top: 50%;
-  }
-  70% {
-    scale: 0.7;
-  }
-  80% {
-    scale: 1;
-    margin-left: 50%;
-    margin-top: 0%;
-  }
-  95% {
-    scale: 0.8;
-  }
-  100% {
-    scale: 0;
-    margin-left: 25%;
-    margin-top: 25%;
-  }
-}
 .loader-item-b {
   background: radial-gradient(#b4b4b4, #b4b4b4, transparent 50%, transparent);
   bottom: 0;
@@ -339,24 +292,14 @@ html {
 html body {
   margin: 0;
   box-sizing: border-box;
-  animation-name: _show;
 }
 html body header {
   display: flex;
   flex-direction: column;
   background-color: rgba(246, 246, 246, 0.1);
-  animation-name: _show;
   animation-duration: 2200ms;
   animation-delay: 1500ms;
   animation-fill-mode: both;
-}
-@keyframes _show {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 html body header nav {
   display: flex;
@@ -367,10 +310,6 @@ html body header nav {
   width: 70%;
 }
 html body main {
-  animation-name: _show;
-  animation-duration: 2200ms;
-  animation-delay: 1500ms;
-  animation-fill-mode: both;
   width: 100vw;
   overflow: hidden;
 }
@@ -378,6 +317,12 @@ html body footer {
   width: 100vw;
   height: 52.2666666667vw;
   background-color: #353535;
+}
+
+#main-index {
+  animation-duration: 2200ms;
+  animation-delay: 1500ms;
+  animation-fill-mode: both;
 }
 
 /* -  - - - - - - -  - */
@@ -499,14 +444,6 @@ form i {
   transition: rotate;
   animation-fill-mode: both;
 }
-@keyframes _rotate {
-  from {
-    rotate: 1.5turn;
-  }
-  to {
-    rotate: 0turn;
-  }
-}
 
 a {
   color: inherit;
@@ -559,14 +496,6 @@ h4 {
   animation-name: _negativeScale;
   animation-duration: 1200ms;
   animation-fill-mode: both;
-}
-@keyframes _negativeScale {
-  from {
-    scale: 0.6;
-  }
-  to {
-    scale: 0.5;
-  }
 }
 .header-logo img img {
   width: 50%;
@@ -723,14 +652,6 @@ h4 {
   animation-name: _toBkBlue;
   transition: background-color;
 }
-@keyframes _toBkBlue {
-  from {
-    background-color: #F6F6F6;
-  }
-  to {
-    background-color: #9356DC;
-  }
-}
 
 .faTitle:hover {
   font-family: "fas-solid";
@@ -738,14 +659,6 @@ h4 {
   animation-name: _bkBlue, _scale;
   animation-duration: 350ms;
   animation-fill-mode: both;
-}
-@keyframes _bkBlue {
-  from {
-    color: #F6F6F6;
-  }
-  to {
-    color: #9356DC;
-  }
 }
 .faTitle:active {
   color: #9356DC;
@@ -779,7 +692,7 @@ h4 {
 
 .element {
   animation-duration: 1200ms;
-  animation-name: backup;
+  animation-name: _backup;
   opacity: 0;
   transition: opacity;
   animation-fill-mode: both;
@@ -800,16 +713,6 @@ h4 {
 .element-d {
   animation-delay: 720ms;
 }
-@keyframes backup {
-  from {
-    opacity: 0;
-    transform: translate(0, 10px);
-  }
-  to {
-    opacity: 1;
-    transform: translate(0, 0px);
-  }
-}
 
 .fas {
   font-size: 120%;
@@ -827,27 +730,10 @@ h4 {
   animation-fill-mode: both;
   max-height: 68.8vw;
 }
-@keyframes _scale {
-  from {
-    scale: 1;
-  }
-  to {
-    scale: 1.2;
-  }
-}
 
 .titre {
-  animation-name: _opacityUp;
   animation-duration: 1200ms;
   animation-fill-mode: both;
-}
-@keyframes _opacityUp {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 .groupThumbs {
@@ -871,6 +757,111 @@ h4 {
 
   .groupThumbs {
     flex-direction: row;
+  }
+}
+@keyframes _show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes _backup {
+  from {
+    opacity: 0;
+    transform: translate(0, 10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0px);
+  }
+}
+@keyframes _negativeScale {
+  from {
+    scale: 0.6;
+  }
+  to {
+    scale: 0.5;
+  }
+}
+@keyframes _rotate {
+  from {
+    rotate: 1.5turn;
+  }
+  to {
+    rotate: 0turn;
+  }
+}
+@keyframes _toBkBlue {
+  from {
+    background-color: #F6F6F6;
+  }
+  to {
+    background-color: #9356DC;
+  }
+}
+@keyframes _bkBlue {
+  from {
+    color: #F6F6F6;
+  }
+  to {
+    color: #9356DC;
+  }
+}
+@keyframes _scale {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: 1.2;
+  }
+}
+@keyframes _loader-item-a {
+  0% {
+    scale: 0;
+    margin-left: 50%;
+    margin-top: 0%;
+  }
+  10% {
+    scale: 0.4;
+  }
+  20% {
+    scale: 1;
+    margin-left: 0%;
+    margin-top: 50%;
+  }
+  30% {
+    scale: 0.5;
+  }
+  40% {
+    scale: 1;
+    margin-left: 50%;
+    margin-top: 0%;
+  }
+  50% {
+    scale: 0.6;
+  }
+  60% {
+    scale: 1;
+    margin-left: 0%;
+    margin-top: 50%;
+  }
+  70% {
+    scale: 0.7;
+  }
+  80% {
+    scale: 1;
+    margin-left: 50%;
+    margin-top: 0%;
+  }
+  95% {
+    scale: 0.8;
+  }
+  100% {
+    scale: 0;
+    margin-left: 25%;
+    margin-top: 25%;
   }
 }
 
