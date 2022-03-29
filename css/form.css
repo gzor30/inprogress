@@ -64,6 +64,9 @@
 .font-big {
   font-size: calc(4vw + 6px);
 }
+.font-50px {
+  font-size: 50px;
+}
 .font-bold {
   font-weight: bold;
 }
@@ -85,6 +88,10 @@
 
 .greyBk {
   background-color: #eaeaea;
+}
+
+.ft-blue {
+  color: #9356DC;
 }
 
 /* -  - - - - - - -  - */
@@ -195,91 +202,27 @@
   color: white;
 }
 
-@keyframes _void {
-  from {
-    display: flex;
-  }
-  to {
-    opacity: 0;
-  }
-}
-.loader {
-  position: absolute;
-  width: 20vw;
-  height: 20vw;
-  left: 40vw;
-  top: 40vh;
-  animation-name: _void;
-  animation-delay: 1800ms;
-  animation-duration: 400ms;
-  animation-fill-mode: both;
-}
 .loader-item {
-  position: absolute;
-  width: 50%;
-  height: 50%;
+  position: fixed;
+  left: calc(50vw - 100px);
+  top: calc(50vh - 100px);
+  opacity: 0;
+  width: 200px;
+  height: 200px;
 }
-.loader-item-a {
-  background: radial-gradient(#9356DC, #9356DC, transparent 50%, transparent);
-  animation-name: _loader-item-a;
-  animation-duration: 1800ms;
-  animation-delay: 100ms;
-  animation-fill-mode: both;
+.loader .loader-item-a {
+  animation-name: _beAndDie, _rotate, _hide;
+  animation-duration: 600ms;
 }
-.loader-item-b {
-  background: radial-gradient(#b4b4b4, #b4b4b4, transparent 50%, transparent);
-  bottom: 0;
-  animation-name: _loader-item-b;
-  animation-duration: 1800ms;
-  animation-delay: 200ms;
-  animation-fill-mode: both;
+.loader .loader-item-b {
+  animation-name: _beAndDie, _rotate-neg, _hide;
+  animation-delay: 600ms;
+  animation-duration: 600ms;
 }
-@keyframes _loader-item-b {
-  0% {
-    scale: 0;
-    margin-left: 0%;
-    margin-bottom: 50%;
-  }
-  10% {
-    scale: 0.4;
-  }
-  20% {
-    scale: 1;
-    margin-left: 50%;
-    margin-bottom: 0%;
-  }
-  30% {
-    scale: 0.5;
-  }
-  40% {
-    scale: 1;
-    margin-left: 0%;
-    margin-bottom: 50%;
-  }
-  50% {
-    scale: 0.6;
-  }
-  60% {
-    scale: 1;
-    margin-left: 50%;
-    margin-bottom: 0%;
-  }
-  70% {
-    scale: 0.7;
-  }
-  80% {
-    scale: 1;
-    margin-left: 0%;
-    margin-bottom: 50%;
-  }
-  90% {
-    scale: 0.8;
-  }
-  100% {
-    scale: 0;
-    margin-left: 25%;
-    margin-bottom: 25%;
-  }
+.loader .loader-item-c {
+  animation-name: _beAndDie, _rotate, _hide;
+  animation-delay: 1200ms;
+  animation-duration: 600ms;
 }
 
 /* -  - - - - - - -  - */
@@ -317,6 +260,13 @@ html body footer {
   width: 100vw;
   height: 52.2666666667vw;
   background-color: #353535;
+}
+
+.showAfterEffect {
+  animation-name: _show;
+  animation-delay: 1600ms;
+  animation-duration: 400ms;
+  animation-fill-mode: both;
 }
 
 #main-index {
@@ -767,6 +717,35 @@ h4 {
     opacity: 1;
   }
 }
+@keyframes _hide {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    z-index: -1;
+    display: none;
+  }
+}
+@keyframes _destroy {
+  from {
+    display: flex;
+  }
+  to {
+    display: none;
+  }
+}
+@keyframes _beAndDie {
+  from {
+    display: none;
+  }
+  50% {
+    display: flex;
+  }
+  to {
+    display: flex;
+  }
+}
 @keyframes _backup {
   from {
     opacity: 0;
@@ -787,10 +766,18 @@ h4 {
 }
 @keyframes _rotate {
   from {
-    rotate: 1.5turn;
+    rotate: 0.75turn;
   }
   to {
     rotate: 0turn;
+  }
+}
+@keyframes _rotate-neg {
+  from {
+    rotate: 0;
+  }
+  to {
+    rotate: 0.75turn;
   }
 }
 @keyframes _toBkBlue {
@@ -817,51 +804,61 @@ h4 {
     scale: 1.2;
   }
 }
+/*
 @keyframes _loader-item-a {
   0% {
     scale: 0;
     margin-left: 50%;
     margin-top: 0%;
   }
-  10% {
-    scale: 0.4;
+  10%{
+    scale: .4;
   }
   20% {
     scale: 1;
     margin-left: 0%;
     margin-top: 50%;
-  }
-  30% {
-    scale: 0.5;
+   }
+  30%{
+    scale: .5;
   }
   40% {
     scale: 1;
     margin-left: 50%;
     margin-top: 0%;
+  }  
+  50%{
+    scale: .6;
   }
-  50% {
-    scale: 0.6;
-  }
-  60% {
+  60%{
     scale: 1;
     margin-left: 0%;
     margin-top: 50%;
   }
-  70% {
-    scale: 0.7;
+  70%{
+    scale: .7;
   }
   80% {
     scale: 1;
     margin-left: 50%;
     margin-top: 0%;
   }
-  95% {
-    scale: 0.8;
+  95%{
+    scale: .8;
   }
   100% {
     scale: 0;
     margin-left: 25%;
     margin-top: 25%;
+  }
+}
+*/
+@keyframes _void {
+  from {
+    display: flex;
+  }
+  to {
+    opacity: 0;
   }
 }
 
