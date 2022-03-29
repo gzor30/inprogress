@@ -64,6 +64,9 @@
 .font-big {
   font-size: calc(4vw + 6px);
 }
+.font-50px {
+  font-size: 50px;
+}
 .font-bold {
   font-weight: bold;
 }
@@ -85,6 +88,10 @@
 
 .greyBk {
   background-color: #eaeaea;
+}
+
+.ft-blue {
+  color: #9356DC;
 }
 
 /* -  - - - - - - -  - */
@@ -195,138 +202,27 @@
   color: white;
 }
 
-@keyframes _void {
-  from {
-    display: flex;
-  }
-  to {
-    opacity: 0;
-  }
-}
-.loader {
-  position: absolute;
-  width: 20vw;
-  height: 20vw;
-  left: 40vw;
-  top: 40vh;
-  animation-name: _void;
-  animation-delay: 1800ms;
-  animation-duration: 400ms;
-  animation-fill-mode: both;
-}
 .loader-item {
-  position: absolute;
-  width: 50%;
-  height: 50%;
+  position: fixed;
+  left: calc(50vw - 100px);
+  top: calc(50vh - 100px);
+  opacity: 0;
+  width: 200px;
+  height: 200px;
 }
-.loader-item-a {
-  background: radial-gradient(#9356DC, #9356DC, transparent 50%, transparent);
-  animation-name: _loader-item-a;
-  animation-duration: 1800ms;
-  animation-delay: 100ms;
-  animation-fill-mode: both;
+.loader .loader-item-a {
+  animation-name: _beAndDie, _rotate, _hide;
+  animation-duration: 600ms;
 }
-@keyframes _loader-item-a {
-  0% {
-    scale: 0;
-    margin-left: 50%;
-    margin-top: 0%;
-  }
-  10% {
-    scale: 0.4;
-  }
-  20% {
-    scale: 1;
-    margin-left: 0%;
-    margin-top: 50%;
-  }
-  30% {
-    scale: 0.5;
-  }
-  40% {
-    scale: 1;
-    margin-left: 50%;
-    margin-top: 0%;
-  }
-  50% {
-    scale: 0.6;
-  }
-  60% {
-    scale: 1;
-    margin-left: 0%;
-    margin-top: 50%;
-  }
-  70% {
-    scale: 0.7;
-  }
-  80% {
-    scale: 1;
-    margin-left: 50%;
-    margin-top: 0%;
-  }
-  95% {
-    scale: 0.8;
-  }
-  100% {
-    scale: 0;
-    margin-left: 25%;
-    margin-top: 25%;
-  }
+.loader .loader-item-b {
+  animation-name: _beAndDie, _rotate-neg, _hide;
+  animation-delay: 600ms;
+  animation-duration: 600ms;
 }
-.loader-item-b {
-  background: radial-gradient(#b4b4b4, #b4b4b4, transparent 50%, transparent);
-  bottom: 0;
-  animation-name: _loader-item-b;
-  animation-duration: 1800ms;
-  animation-delay: 200ms;
-  animation-fill-mode: both;
-}
-@keyframes _loader-item-b {
-  0% {
-    scale: 0;
-    margin-left: 0%;
-    margin-bottom: 50%;
-  }
-  10% {
-    scale: 0.4;
-  }
-  20% {
-    scale: 1;
-    margin-left: 50%;
-    margin-bottom: 0%;
-  }
-  30% {
-    scale: 0.5;
-  }
-  40% {
-    scale: 1;
-    margin-left: 0%;
-    margin-bottom: 50%;
-  }
-  50% {
-    scale: 0.6;
-  }
-  60% {
-    scale: 1;
-    margin-left: 50%;
-    margin-bottom: 0%;
-  }
-  70% {
-    scale: 0.7;
-  }
-  80% {
-    scale: 1;
-    margin-left: 0%;
-    margin-bottom: 50%;
-  }
-  90% {
-    scale: 0.8;
-  }
-  100% {
-    scale: 0;
-    margin-left: 25%;
-    margin-bottom: 25%;
-  }
+.loader .loader-item-c {
+  animation-name: _beAndDie, _rotate, _hide;
+  animation-delay: 1200ms;
+  animation-duration: 600ms;
 }
 
 /* -  - - - - - - -  - */
@@ -339,24 +235,14 @@ html {
 html body {
   margin: 0;
   box-sizing: border-box;
-  animation-name: _show;
 }
 html body header {
   display: flex;
   flex-direction: column;
   background-color: rgba(246, 246, 246, 0.1);
-  animation-name: _show;
   animation-duration: 2200ms;
   animation-delay: 1500ms;
   animation-fill-mode: both;
-}
-@keyframes _show {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 html body header nav {
   display: flex;
@@ -367,10 +253,6 @@ html body header nav {
   width: 70%;
 }
 html body main {
-  animation-name: _show;
-  animation-duration: 2200ms;
-  animation-delay: 1500ms;
-  animation-fill-mode: both;
   width: 100vw;
   overflow: hidden;
 }
@@ -378,6 +260,19 @@ html body footer {
   width: 100vw;
   height: 52.2666666667vw;
   background-color: #353535;
+}
+
+.showAfterEffect {
+  animation-name: _show;
+  animation-delay: 1600ms;
+  animation-duration: 400ms;
+  animation-fill-mode: both;
+}
+
+#main-index {
+  animation-duration: 2200ms;
+  animation-delay: 1500ms;
+  animation-fill-mode: both;
 }
 
 /* -  - - - - - - -  - */
@@ -499,14 +394,6 @@ form i {
   transition: rotate;
   animation-fill-mode: both;
 }
-@keyframes _rotate {
-  from {
-    rotate: 1.5turn;
-  }
-  to {
-    rotate: 0turn;
-  }
-}
 
 a {
   color: inherit;
@@ -559,14 +446,6 @@ h4 {
   animation-name: _negativeScale;
   animation-duration: 1200ms;
   animation-fill-mode: both;
-}
-@keyframes _negativeScale {
-  from {
-    scale: 0.6;
-  }
-  to {
-    scale: 0.5;
-  }
 }
 .header-logo img img {
   width: 50%;
@@ -723,14 +602,6 @@ h4 {
   animation-name: _toBkBlue;
   transition: background-color;
 }
-@keyframes _toBkBlue {
-  from {
-    background-color: #F6F6F6;
-  }
-  to {
-    background-color: #9356DC;
-  }
-}
 
 .faTitle:hover {
   font-family: "fas-solid";
@@ -738,14 +609,6 @@ h4 {
   animation-name: _bkBlue, _scale;
   animation-duration: 350ms;
   animation-fill-mode: both;
-}
-@keyframes _bkBlue {
-  from {
-    color: #F6F6F6;
-  }
-  to {
-    color: #9356DC;
-  }
 }
 .faTitle:active {
   color: #9356DC;
@@ -779,7 +642,7 @@ h4 {
 
 .element {
   animation-duration: 1200ms;
-  animation-name: backup;
+  animation-name: _backup;
   opacity: 0;
   transition: opacity;
   animation-fill-mode: both;
@@ -800,16 +663,6 @@ h4 {
 .element-d {
   animation-delay: 720ms;
 }
-@keyframes backup {
-  from {
-    opacity: 0;
-    transform: translate(0, 10px);
-  }
-  to {
-    opacity: 1;
-    transform: translate(0, 0px);
-  }
-}
 
 .fas {
   font-size: 120%;
@@ -827,27 +680,10 @@ h4 {
   animation-fill-mode: both;
   max-height: 68.8vw;
 }
-@keyframes _scale {
-  from {
-    scale: 1;
-  }
-  to {
-    scale: 1.2;
-  }
-}
 
 .titre {
-  animation-name: _opacityUp;
   animation-duration: 1200ms;
   animation-fill-mode: both;
-}
-@keyframes _opacityUp {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 .groupThumbs {
@@ -871,6 +707,158 @@ h4 {
 
   .groupThumbs {
     flex-direction: row;
+  }
+}
+@keyframes _show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes _hide {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    z-index: -1;
+    display: none;
+  }
+}
+@keyframes _destroy {
+  from {
+    display: flex;
+  }
+  to {
+    display: none;
+  }
+}
+@keyframes _beAndDie {
+  from {
+    display: none;
+  }
+  50% {
+    display: flex;
+  }
+  to {
+    display: flex;
+  }
+}
+@keyframes _backup {
+  from {
+    opacity: 0;
+    transform: translate(0, 10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0px);
+  }
+}
+@keyframes _negativeScale {
+  from {
+    scale: 0.6;
+  }
+  to {
+    scale: 0.5;
+  }
+}
+@keyframes _rotate {
+  from {
+    rotate: 0.75turn;
+  }
+  to {
+    rotate: 0turn;
+  }
+}
+@keyframes _rotate-neg {
+  from {
+    rotate: 0;
+  }
+  to {
+    rotate: 0.75turn;
+  }
+}
+@keyframes _toBkBlue {
+  from {
+    background-color: #F6F6F6;
+  }
+  to {
+    background-color: #9356DC;
+  }
+}
+@keyframes _bkBlue {
+  from {
+    color: #F6F6F6;
+  }
+  to {
+    color: #9356DC;
+  }
+}
+@keyframes _scale {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: 1.2;
+  }
+}
+/*
+@keyframes _loader-item-a {
+  0% {
+    scale: 0;
+    margin-left: 50%;
+    margin-top: 0%;
+  }
+  10%{
+    scale: .4;
+  }
+  20% {
+    scale: 1;
+    margin-left: 0%;
+    margin-top: 50%;
+   }
+  30%{
+    scale: .5;
+  }
+  40% {
+    scale: 1;
+    margin-left: 50%;
+    margin-top: 0%;
+  }  
+  50%{
+    scale: .6;
+  }
+  60%{
+    scale: 1;
+    margin-left: 0%;
+    margin-top: 50%;
+  }
+  70%{
+    scale: .7;
+  }
+  80% {
+    scale: 1;
+    margin-left: 50%;
+    margin-top: 0%;
+  }
+  95%{
+    scale: .8;
+  }
+  100% {
+    scale: 0;
+    margin-left: 25%;
+    margin-top: 25%;
+  }
+}
+*/
+@keyframes _void {
+  from {
+    display: flex;
+  }
+  to {
+    opacity: 0;
   }
 }
 

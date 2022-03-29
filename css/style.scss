@@ -66,9 +66,9 @@ $loaderDuration-less: 1500ms;
 //$keyframeDuration: 7200ms;
 $opacity: 0;
 
-$thumb-width: calc(335 / 375 * 100vw); /* ratio des dimensions des thumbnails */
-$thumb-height: calc(251 / 375 * 100vw);/* mesurées depuis la maquette */
-$thumb-width-reduce: calc(235 / 375 * 100vw);
+$thumb-width: convert_px-vw(335); /* ratio des dimensions des thumbnails */
+$thumb-height: convert_px-vw(251);/* mesurées depuis la maquette */
+$thumb-width-reduce: convert_px-vw(235);
 
 $li-width: convert_px-vw(335);   /* ratio des li definnisant le bloc fonctionnement */
 $li-height: convert_px-vw(72);   /* mesurées depuis la maquette */
@@ -101,6 +101,8 @@ $pourct70: .7;
 $pourct80: .8;
 $pourct90: .9;
 $pourctmax: 1;
+
+
 
 
 
@@ -147,6 +149,9 @@ $txt-thumb-height: calc(77 / 251 * 100%);
   &-big{
     font-size: calc(4vw + 6px);
   }
+  &-50px{
+    font-size: 50px;
+  }
   &-bold{
     font-weight: bold;
   }
@@ -168,6 +173,10 @@ $txt-thumb-height: calc(77 / 251 * 100%);
 
 .greyBk{
   background-color: #eaeaea;
+}
+
+.ft-blue{
+  color: $bluePrimr;
 }
 
 
@@ -277,149 +286,34 @@ $txt-thumb-height: calc(77 / 251 * 100%);
 // ____________________________________
 // __________ ! end ultra ! ___________
 
-@keyframes _void {
-  from{
-    display: flex;
-  }
-  to{
-    opacity: 0;
-  }
-}
+
 
 
 
 .loader{
-  position: absolute;
-  width: 20vw;
-  height: 20vw;
-  left: 40vw;
-  top: 40vh;
-  animation-name: _void;
-  animation-delay: $loaderDuration;
-  animation-duration: 400ms;
-  animation-fill-mode: both;
-  &-item{ 
-    position: absolute;
-    width: 50%;
-    height: 50%;
-    &-a{
-      background: radial-gradient($bluePrimr, $bluePrimr, transparent 50%, transparent);
-      animation-name: _loader-item-a;
-      animation-duration: $loaderDuration;
-      animation-delay: 100ms;
-      animation-fill-mode: both;
-      @keyframes _loader-item-a {
-        0% {
-          scale: 0;
-          margin-left: 50%;
-          margin-top: 0%;
-        }
-        10%{
-          scale: .4;
-        }
-        20% {
-          scale: 1;
-          margin-left: 0%;
-          margin-top: 50%;
-         }
-         
-        30%{
-          scale: .5;
-        }
-        40% {
-          scale: 1;
-          margin-left: 50%;
-          margin-top: 0%;
-        }
-        
-        50%{
-          scale: .6;
-        }
-        60%{
-          scale: 1;
-          margin-left: 0%;
-          margin-top: 50%;
-        }
-        
-        70%{
-          scale: .7;
-        }
-        80% {
-          scale: 1;
-          margin-left: 50%;
-          margin-top: 0%;
-        }
-        95%{
-          scale: .8;
-        }
-        100% {
-          scale: 0;
-          margin-left: 25%;
-          margin-top: 25%;
-        }
-      }
+    &-item{
+      position: fixed;
+      left: calc(50vw - 100px);
+      top: calc(50vh - 100px);
+      opacity: 0;
+      width: 200px;
+      height: 200px;
     }
-    &-b{
-      background: radial-gradient($grey180, $grey180, transparent 50%, transparent);
-      bottom: 0;animation-name: _loader-item-b;
-      animation-duration: $loaderDuration;
-      animation-delay: 200ms;
-      animation-fill-mode: both;
-      @keyframes _loader-item-b {
-        0% {
-          scale: 0;
-          margin-left: 0%;
-          margin-bottom: 50%;
-        }
-        10%{
-          scale: .4;
-        }
-        20% {
-          scale: 1;
-          margin-left: 50%;
-          margin-bottom: 0%;
-        }
-        30%{
-          scale: .5;
-        }
-        40% {
-          scale: 1;
-          margin-left: 0%;
-          margin-bottom: 50%;
-        }
-        50%{
-          scale: .6;
-        }
-        60%{
-          scale: 1;
-          margin-left: 50%;
-          margin-bottom: 0%;
-        }
-        70%{
-          scale: .7;
-        }
-        80% {
-          scale: 1;
-          margin-left: 0%;
-          margin-bottom: 50%;
-        }
-        90%{
-          scale: .8;
-        }
-        100%{
-          scale: 0;
-          margin-left: 25%;
-          margin-bottom: 25%;
-        }
-      }
+    .loader-item-a{
+      animation-name: _beAndDie, _rotate, _hide; 
+      animation-duration: 600ms;
+    }
+    .loader-item-b{
+      animation-name: _beAndDie, _rotate-neg, _hide; 
+      animation-delay: 600ms;
+      animation-duration: 600ms;
+    }
+    .loader-item-c{
+      animation-name: _beAndDie, _rotate, _hide; 
+      animation-delay: 1200ms;
+      animation-duration: 600ms;
     }
   }
-}
-
-
-
-
-
 
 
 
@@ -432,23 +326,13 @@ html{
   body{
     margin: 0;
     box-sizing: border-box;
-    animation-name: _show;
     header{
       display: flex;
       flex-direction: column;
       background-color: rgba($gris_li, $pourct10);
-      animation-name: _show;
       animation-duration: 2200ms;
       animation-delay: $loaderDuration-less;
       animation-fill-mode: both;
-      @keyframes _show {
-        from{
-          opacity: 0;
-        }
-        to{
-          opacity: 1;
-        }
-      }
       nav{
         display: flex;
         flex-direction: column;
@@ -459,13 +343,10 @@ html{
       }
     }
     main{
-      animation-name: _show;
-      animation-duration: 2200ms;
-      animation-delay: $loaderDuration-less;
-      animation-fill-mode: both;
       width: 100vw;
       overflow: hidden;
     }
+
     footer{
       width: 100vw;
       height: calc(196 / 375 * 100vw);
@@ -474,8 +355,18 @@ html{
   }
 }
 
+.showAfterEffect{
+  animation-name: _show;
+  animation-delay: 1600ms;
+  animation-duration: 400ms;
+  animation-fill-mode: both;}
 
 
+#main-index{
+  animation-duration: 2200ms;
+  animation-delay: $loaderDuration-less;
+  animation-fill-mode: both;
+}
 
 /* -  - - - - - - -  - */
 /* - ELEMENT HTML - */        /* elements duplicables ! */
@@ -596,15 +487,6 @@ form{
     animation-name: _rotate;
     transition: rotate;
     animation-fill-mode: both;
-    @keyframes _rotate {
-      from {
-        rotate: 1.5turn;
-      }
-    
-      to {
-        rotate: 0turn;
-      }
-    }
   }
 }
 
@@ -662,15 +544,6 @@ h4 {
     animation-name: _negativeScale;
     animation-duration: $keyframeDuration;
     animation-fill-mode: both;
-    @keyframes _negativeScale {
-      from{
-        scale: .6;
-      }
-      to{
-        scale: .5;
-      }
-    }
-
     img{
       width: 50%;
       margin: auto;
@@ -841,15 +714,6 @@ h4 {
   animation-duration: $keyframeDuration;
   animation-name: _toBkBlue;
   transition: background-color;
-  @keyframes _toBkBlue {
-    from {
-      background-color: $gris_li;
-    }
-  
-    to {
-      background-color: $bluePrimr
-    }
-  }
 }
 
 .faTitle{
@@ -859,14 +723,7 @@ h4 {
     animation-name: _bkBlue, _scale;
     animation-duration: 350ms;
     animation-fill-mode: both;
-    @keyframes _bkBlue {
-      from{
-        color: $gris_li;
-      }
-      to{
-        color: $bluePrimr;
-      }
-    }
+    
   }
   
   &:active{
@@ -903,7 +760,7 @@ h4 {
 
 .element{
   animation-duration: $keyframeDuration;
-  animation-name: backup;
+  animation-name: _backup;
   opacity: 0;
   transition: opacity;
   animation-fill-mode: both;
@@ -923,17 +780,6 @@ h4 {
   &-d{
     animation-delay: 720ms;
   }
-  @keyframes backup {
-    from {
-      opacity: 0;
-      transform: translate(0, 10px);
-    }
-  
-    to {
-      opacity: 1;
-      transform: translate(0, 0px);
-    }
-  }
 }
 
 
@@ -952,28 +798,11 @@ h4 {
   animation-duration: $keyframeDuration;
   animation-fill-mode: both;
   max-height: convert_px-vw(258);
-  @keyframes _scale {
-    from{
-      scale: 1;
-    }
-    to{
-      scale: 1.2;
-    }
-  }
 }
 
 .titre{
-  animation-name: _opacityUp;
   animation-duration: $keyframeDuration;
   animation-fill-mode: both;
-  @keyframes _opacityUp {
-    from{
-      opacity: 0;
-    }
-    to{
-      opacity: 1;
-    }
-  }
 }
 .groupThumbs{
   margin: auto;
@@ -1003,5 +832,167 @@ h4 {
   }
   .groupThumbs{
     flex-direction: row;
+  }
+}
+
+
+
+
+// KEYFRAMES !
+@keyframes _show {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+@keyframes _hide {
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+    z-index: -1;
+    display: none;
+  }
+}
+@keyframes _destroy {
+  from{
+    display: flex;
+  }
+  to{
+    display: none;
+  }
+}
+
+@keyframes _beAndDie{
+  from{ display: none; }
+  50%{ display: flex; }
+  to{ display: flex;}
+}
+
+
+@keyframes _backup {
+  from {
+    opacity: 0;
+    transform: translate(0, 10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0px);
+  }
+}
+
+@keyframes _negativeScale {
+  from{
+    scale: .6;
+  }
+  to{
+    scale: .5;
+  }
+}
+
+@keyframes _rotate {
+  from {
+    rotate: .75turn;
+  }
+
+  to {
+    rotate: 0turn;
+  }
+}
+@keyframes _rotate-neg {
+  from {
+    rotate: 0;
+  }
+
+  to {
+    rotate: .75turn;
+  }
+}
+@keyframes _toBkBlue {
+  from {
+    background-color: $gris_li;
+  }
+
+  to {
+    background-color: $bluePrimr
+  }
+}
+@keyframes _bkBlue {
+  from{
+    color: $gris_li;
+  }
+  to{
+    color: $bluePrimr;
+  }
+}
+
+@keyframes _scale {
+  from{
+    scale: 1;
+  }
+  to{
+    scale: 1.2;
+  }
+}
+
+/*
+@keyframes _loader-item-a {
+  0% {
+    scale: 0;
+    margin-left: 50%;
+    margin-top: 0%;
+  }
+  10%{
+    scale: .4;
+  }
+  20% {
+    scale: 1;
+    margin-left: 0%;
+    margin-top: 50%;
+   }
+  30%{
+    scale: .5;
+  }
+  40% {
+    scale: 1;
+    margin-left: 50%;
+    margin-top: 0%;
+  }  
+  50%{
+    scale: .6;
+  }
+  60%{
+    scale: 1;
+    margin-left: 0%;
+    margin-top: 50%;
+  }
+  70%{
+    scale: .7;
+  }
+  80% {
+    scale: 1;
+    margin-left: 50%;
+    margin-top: 0%;
+  }
+  95%{
+    scale: .8;
+  }
+  100% {
+    scale: 0;
+    margin-left: 25%;
+    margin-top: 25%;
+  }
+}
+*/
+@keyframes _void {
+  from{
+    display: flex;
+  }
+  to{
+    opacity: 0;
   }
 }
