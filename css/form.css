@@ -263,13 +263,13 @@ html body footer {
   background-color: #353535;
 }
 
-/*
-.showAfterEffect{
+.showAfterEffect {
   animation-name: _show;
   animation-delay: 1600ms;
   animation-duration: 400ms;
-  animation-fill-mode: both;}
-*/
+  animation-fill-mode: both;
+}
+
 #main-index {
   animation-duration: 2200ms;
   animation-delay: 1500ms;
