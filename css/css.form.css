@@ -157,6 +157,9 @@
 .margin-mediumRight {
   margin-right: 10.1333333333vw;
 }
+.margin-mediumBottom {
+  margin-bottom: 10.1333333333vw;
+}
 
 /* size */
 .w100 {
@@ -194,6 +197,29 @@
 
 .white {
   color: white;
+}
+
+.loader-item {
+  position: fixed;
+  left: calc(50vw - 100px);
+  top: calc(50vh - 100px);
+  opacity: 0;
+  width: 200px;
+  height: 200px;
+}
+.loader .loader-item-a {
+  animation-name: _beAndDie, _rotate, _hide;
+  animation-duration: 600ms;
+}
+.loader .loader-item-b {
+  animation-name: _beAndDie, _rotate-neg, _hide;
+  animation-delay: 600ms;
+  animation-duration: 600ms;
+}
+.loader .loader-item-c {
+  animation-name: _beAndDie, _rotate, _hide;
+  animation-delay: 1200ms;
+  animation-duration: 600ms;
 }
 
 /* -  - - - - - - -  - */
@@ -284,9 +310,6 @@ section.section-B h1 {
 section.section-B .titre {
   font-family: "roboto_thin";
   text-transform: uppercase;
-}
-section.section-B .menuContainer {
-  flex-direction: column;
 }
 
 /* div */
@@ -492,8 +515,6 @@ h4 {
 .container .thumb-B button {
   width: 16vw;
   height: 100%;
-  font-size: 1.2rem;
-  text-align: center;
   background: none;
   border: none;
   align-self: end;
@@ -557,9 +578,6 @@ h4 {
 .container .thumb-B:hover .textThumb {
   max-width: 62.6666666667vw;
 }
-.container .thumb-B:hover .soustitre {
-  max-width: 100%;
-}
 
 /* -  - - - - - - -  - */
 /* formes */
@@ -616,7 +634,6 @@ h4 {
 .menu .prix {
   transition: transform 600ms;
   transition-property: transform;
-  padding-left: 8px;
 }
 
 .logo_font {
@@ -662,7 +679,6 @@ h4 {
   animation-duration: 1200ms;
   animation-fill-mode: both;
   max-height: 68.8vw;
-  overflow: hidden;
 }
 
 .titre {
@@ -700,7 +716,7 @@ h4 {
   .container {
     flex-direction: row;
     flex-wrap: wrap;
-    width: 90%;
+    width: 80%;
     margin: auto;
   }
   .container .blocThumb {
@@ -708,8 +724,8 @@ h4 {
     flex-direction: row;
   }
   .container .blocThumb .thumb {
-    width: 40.6060606061vw;
-    height: 30.4242424242vw;
+    width: 35.7333333333vw;
+    height: 26.7733333333vw;
     margin: 1vw;
   }
 
@@ -719,14 +735,18 @@ h4 {
   }
 
   ol {
-    width: 100%;
+    width: 90%;
     margin: auto;
-    flex-direction: row;
   }
   ol li {
-    width: 28%;
-    height: 90px;
-    margin: auto;
+    width: 100%;
+    height: 70px;
+    font-size: calc(0.7vw + 10px);
+  }
+  ol li .number {
+    width: 30px;
+    height: 30px;
+    margin-left: -15px;
   }
 
   footer {
@@ -742,58 +762,10 @@ h4 {
   }
 }
 @media screen and (min-width: 1080px) {
-  .imgTopResto {
-    max-width: 100%;
-    max-height: 32rem;
-    width: 100%;
-    object-fit: cover;
-  }
-
-  .section-B {
-    width: 90%;
-  }
-  .section-B .menuContainer {
-    flex-direction: row !important;
-  }
-  .section-B .menuContainer .thumb-B {
-    width: 25.1531531532vw;
-    height: 4.9009009009vw;
-    cursor: grab;
-    overflow: hidden;
-  }
-  .section-B .menuContainer .thumb-B .thumb__txt {
-    font-size: 0.7em;
-    padding-left: 5%;
-    padding-right: 5%;
-    overflow: hidden;
-  }
-  .section-B .menuContainer .thumb-B:hover button {
-    transform: translate(-4.3243243243vw, 0);
-  }
-  .section-B .menuContainer .thumb-B:hover button .fa-regular {
-    transform: rotate(1turn);
-    transition: transform 600ms;
-    transition-property: transform;
-  }
-  .section-B .menuContainer .thumb-B:hover .prix {
-    transform: translate(-4.3243243243vw, 0);
-  }
-  .section-B .menuContainer .thumb-B:hover p {
-    width: 67%;
-  }
-  .section-B .menuContainer .thumb-B .check_btn {
-    margin-right: -4.9009009009vw;
-    width: 4.9009009009vw;
-    transition: transform 600ms !important;
-  }
-  .section-B .bigBlueBtn {
-    margin-top: 35px;
-  }
-
   .container {
     flex-direction: row;
     flex-wrap: wrap;
-    width: 90%;
+    width: 80%;
     margin: auto;
   }
   .container .blocThumb {
@@ -801,8 +773,8 @@ h4 {
     flex-direction: row;
   }
   .container .blocThumb .thumb {
-    width: 20.303030303vw;
-    height: 15.2121212121vw;
+    width: 17.8666666667vw;
+    height: 13.3866666667vw;
     margin: 1vw;
   }
   .container .blocThumb .thumb .thumb__txt {
@@ -810,19 +782,16 @@ h4 {
     padding-right: 10%;
     font-size: 0.95rem;
   }
-  .container-B {
-    margin: 0 !important;
-  }
 
-  .number {
-    width: 25px !important;
-    height: 25px !important;
-    margin-left: -12.5px !important;
+  ol {
+    width: 100%;
+    margin: auto;
+    flex-direction: row;
   }
-
-  .hyphen {
-    margin-top: 5px !important;
-    margin-bottom: 2vw !important;
+  ol li {
+    width: 28%;
+    height: 125px;
+    margin: auto;
   }
 }
 @keyframes _show {
@@ -831,6 +800,24 @@ h4 {
   }
   to {
     opacity: 1;
+  }
+}
+@keyframes _hide {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    z-index: -1;
+    display: none;
+  }
+}
+@keyframes _destroy {
+  from {
+    display: flex;
+  }
+  to {
+    display: none;
   }
 }
 @keyframes _beAndDie {
@@ -864,46 +851,18 @@ h4 {
 }
 @keyframes _rotate {
   from {
-    -ms-transform: rotate(270deg);
-    /* IE 9 */
-    -moz-transform: rotate(270deg);
-    /* Firefox */
-    -webkit-transform: rotate(270deg);
-    /* Safari and Chrome */
-    -o-transform: rotate(270deg);
-    /* Opera */
+    rotate: 0.75turn;
   }
   to {
-    -ms-transform: rotate(0deg);
-    /* IE 9 */
-    -moz-transform: rotate(0deg);
-    /* Firefox */
-    -webkit-transform: rotate(0deg);
-    /* Safari and Chrome */
-    -o-transform: rotate(0deg);
-    /* Opera */
+    rotate: 0turn;
   }
 }
 @keyframes _rotate-neg {
   from {
-    -ms-transform: rotate(0deg);
-    /* IE 9 */
-    -moz-transform: rotate(0deg);
-    /* Firefox */
-    -webkit-transform: rotate(0deg);
-    /* Safari and Chrome */
-    -o-transform: rotate(0deg);
-    /* Opera */
+    rotate: 0;
   }
   to {
-    -ms-transform: rotate(270deg);
-    /* IE 9 */
-    -moz-transform: rotate(270deg);
-    /* Firefox */
-    -webkit-transform: rotate(270deg);
-    /* Safari and Chrome */
-    -o-transform: rotate(270deg);
-    /* Opera */
+    rotate: 0.75turn;
   }
 }
 @keyframes _bkBlue {
@@ -931,4 +890,4 @@ h4 {
   }
 }
 
-/*# sourceMappingURL=form.css.map */
+/*# sourceMappingURL=css.form.css.map */

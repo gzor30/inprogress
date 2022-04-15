@@ -20,8 +20,8 @@
     </header>
 
     <main>
-      <div class="imgTopResto">
-        <img src="../css/img/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" />
+      <div >
+        <img class="imgTopResto" src="../css/img/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" />
       </div>
       
       <section class="section-B">
@@ -33,17 +33,19 @@
         </div>
 
 
-        <div>
+        <div class="menuContainer">
           <div class="container container-B element element-a">           <!-- Entrées -->
-            <span class="titre"> Entrées</span>          <!-- ------- -->
-            <div class="hyphen"></div>
+            <div class="flexcolumn">
+              <span class="titre"> Entrées</span>
+              <div class="hyphen"></div>
+            </div>
             <a href="">
               <div class="thumb-B flexrow element element-a">
                 <div class="thumb__txt">
                   <div class="flexrow menu">
                     <p class="flex flexcolumn textEllipsis"> 
                       <span class="font-150 font-bold textEllipsis textThumb"> Ravioles de foie gras </span>
-                      <span class="flex margin margin-left0 soustitre"> Accompagnés de leur crème à la truffe </span>
+                      <span class="margin margin-left0 soustitre textEllipsis"> Accompagnés de leur crème à la truffe </span>
                     </p>
                     <span class="flex prix font-bold font-125 margin margin-right0"> 25€ </span>
                   </div>
@@ -60,7 +62,7 @@
                   <div class="flexrow menu">
                     <p class="flex flexcolumn textEllipsis"> 
                       <span class="font-150 font-bold textEllipsis textThumb"> Caviar osciètre </span>
-                      <span class="flex margin margin-left0 soustitre"> Sur blini à la farine de blé noir </span>
+                      <span class="margin margin-left0 soustitre textEllipsis"> Sur blini à la farine de blé noir </span>
                     </p>
                     <span class="flex prix font-bold font-125 margin margin-right0"> 35€ </span>
                   </div>
@@ -76,8 +78,8 @@
                 <div class="thumb__txt">
                   <div class="flexrow menu">
                     <p class="flex flexcolumn textEllipsis"> 
-                      <span class="font-150 font-bold textEllipsis textThumb"> Homard et espuma de !undefined! </span>
-                      <span class="flex margin margin-left0 soustitre"> Mariné aux zests d'orange </span>
+                      <span class="font-150 font-bold textEllipsis textThumb"> Homard et espuma </span>
+                      <span class="margin margin-left0 soustitre textEllipsis"> Mariné aux zests d'orange </span>
                     </p>
                     <span class="flex prix font-bold font-125 margin margin-right0"> 20€ </span>
                   </div>
@@ -94,7 +96,7 @@
                   <div class="flexrow menu">
                     <p class="flex flexcolumn textEllipsis"> 
                       <span class="font-150 font-bold textEllipsis textThumb"> Foie gras de canard cuit entier </span>
-                      <span class="flex margin margin-left0 soustitre"> Confiture de figue et pain toasté </span>
+                      <span class="margin margin-left0 soustitre textEllipsis"> Confiture de figue et pain toasté </span>
                     </p>
                     <span class="flex prix font-bold font-125 margin margin-right0"> 35€ </span>
                   </div>
@@ -108,15 +110,17 @@
 
           
           <div class="container  container-B element element-b">         <!-- Plats -->
-            <span class="titre"> Plats </span>          <!-- ----- -->
-            <div class="hyphen"></div>
+            <div class="flexcolumn">
+              <span class="titre"> Plats </span>
+              <div class="hyphen"></div>
+            </div>
             <a>
               <div class="thumb-B flexrow element element-a">
                 <div class="thumb__txt">
                   <div class="flexrow menu">
                     <p class="flex flexcolumn textEllipsis"> 
                       <span class="font-150 font-bold textEllipsis textThumb"> Noix de coquilles Saint-Jacques </span>
-                      <span class="flex margin margin-left0 soustitre"> Sur lit de purée de céleri-rave </span>
+                      <span class="margin margin-left0 soustitre textEllipsis"> Sur lit de purée de céleri-rave </span>
                     </p>
                     <span class="flex prix font-bold font-125 margin margin-right0"> 40€ </span>
                   </div>
@@ -133,7 +137,7 @@
                   <div class="flexrow menu">
                     <p class="flex flexcolumn textEllipsis"> 
                       <span class="font-150 font-bold textEllipsis textThumb"> Langoustine poêlée </span>
-                      <span class="flex margin margin-left0 soustitre"> Purée de patate douce </span>
+                      <span class="margin margin-left0 soustitre textEllipsis"> Purée de patate douce </span>
                     </p>
                     <span class="flex prix font-bold font-125 margin margin-right0"> 35€ </span>
                   </div>
@@ -150,7 +154,7 @@
                   <div class="flexrow menu">
                     <p class="flex flexcolumn textEllipsis"> 
                       <span class="font-150 font-bold textEllipsis textThumb"> Mijoté de queue de boeuf </span>
-                      <span class="flex margin margin-left0 soustitre"> Et riz sauvage aux zests de citron </span>
+                      <span class="margin margin-left0 soustitre textEllipsis"> Et riz sauvage aux zests de citron </span>
                     </p>
                     <span class="flex prix font-bold font-125 margin margin-right0"> 44€ </span>
                   </div>
@@ -165,15 +169,17 @@
 
           
           <div class="container  container-B element element-c">           <!-- Desserts -->
-            <span class="titre"> Desserts</span>          <!-- -------- -->
-            <div class="hyphen"></div>
+            <div class="flexcolumn">
+              <span class="titre"> Desserts</span>
+              <div class="hyphen"></div>
+            </div>
             <a>
               <div class="thumb-B flexrow element element-a">
                 <div class="thumb__txt">
                   <div class="flexrow menu">
                     <p class="flex flexcolumn textEllipsis"> 
                       <span class="font-150 font-bold textEllipsis textThumb"> Macaron noisette et chocolat </span>
-                      <span class="flex margin margin-left0 soustitre"> Glace au caramel brun et sel de Guérande </span>
+                      <span class="margin margin-left0 soustitre textEllipsis"> Glace au caramel brun et sel de Guérande </span>
                     </p>
                     <span class="flex prix font-bold font-125 margin margin-right0"> 18€ </span>
                   </div>
@@ -190,7 +196,7 @@
                   <div class="flexrow menu">
                     <p class="flex flexcolumn textEllipsis"> 
                       <span class="font-150 font-bold textEllipsis textThumb"> Baba au rhum revisité </span>
-                      <span class="flex margin margin-left0 soustitre"> Revisitée </span>
+                      <span class="margin margin-left0 soustitre textEllipsis"> Revisitée </span>
                     </p>
                     <span class="flex prix font-bold font-125 margin margin-right0"> 22€ </span>
                   </div>
@@ -207,7 +213,7 @@
                   <div class="flexrow menu">
                     <p class="flex flexcolumn textEllipsis"> 
                       <span class="font-150 font-bold textEllipsis textThumb"> Tarte au citron meringuée </span>
-                      <span class="flex margin margin-left0 soustitre"> Destructurée </span>
+                      <span class="margin margin-left0 soustitre textEllipsis"> Destructurée </span>
                     </p>
                     <span class="flex prix font-bold font-125 margin margin-right0"> 23€ </span>
                   </div>
@@ -218,6 +224,7 @@
               </div>
             </a>
           </div>
+        </div>
 
           <button class="bigBlueBtn margin">
             <span class="margin"> Commander </span>
