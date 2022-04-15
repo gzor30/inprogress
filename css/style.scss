@@ -560,8 +560,11 @@ h4 {
         width: 100%;
         height: $txt-thumb-height;
       }
-      &:hover img{
-        scale: 1.1;
+      &:hover img{  
+      -ms-transform:scale(1); /* IE 9 */
+      -moz-transform:scale(1); /* Firefox */
+      -webkit-transform:scale(1); /* Safari and Chrome */
+      -o-transform:scale(1); /* Opera */
         transition: transform 700ms;     
         transition-property: scale;
       }
@@ -985,10 +988,16 @@ h4 {
 
 @keyframes _negativeScale {
   from{
-    scale: .6;
+    -ms-transform:scale(.6); /* IE 9 */
+    -moz-transform:scale(.6); /* Firefox */
+    -webkit-transform:scale(.6); /* Safari and Chrome */
+    -o-transform:scale(.6); /* Opera */
   }
   to{
-    scale: .5;
+    -ms-transform:scale(.5); /* IE 9 */
+    -moz-transform:scale(.5); /* Firefox */
+    -webkit-transform:scale(.5); /* Safari and Chrome */
+    -o-transform:scale(.5); /* Opera */
   }
 }
 
@@ -1035,10 +1044,17 @@ h4 {
 
 @keyframes _scale {
   from{
-    scale: 1;
+    
+    -ms-transform:scale(1); /* IE 9 */
+    -moz-transform:scale(1); /* Firefox */
+    -webkit-transform:scale(1); /* Safari and Chrome */
+    -o-transform:scale(1); /* Opera */
   }
   to{
-    scale: 1.2;
+    -ms-transform:scale(1); /* IE 9 */
+    -moz-transform:scale(1); /* Firefox */
+    -webkit-transform:scale(1); /* Safari and Chrome */
+    -o-transform:scale(1); /* Opera */
   }
 }
 

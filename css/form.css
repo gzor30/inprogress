@@ -462,7 +462,14 @@ h4 {
   height: 30.6772908367%;
 }
 .container .thumb-A:hover img {
-  scale: 1.1;
+  -ms-transform: scale(1);
+  /* IE 9 */
+  -moz-transform: scale(1);
+  /* Firefox */
+  -webkit-transform: scale(1);
+  /* Safari and Chrome */
+  -o-transform: scale(1);
+  /* Opera */
   transition: transform 700ms;
   transition-property: scale;
 }
@@ -856,10 +863,24 @@ h4 {
 }
 @keyframes _negativeScale {
   from {
-    scale: 0.6;
+    -ms-transform: scale(0.6);
+    /* IE 9 */
+    -moz-transform: scale(0.6);
+    /* Firefox */
+    -webkit-transform: scale(0.6);
+    /* Safari and Chrome */
+    -o-transform: scale(0.6);
+    /* Opera */
   }
   to {
-    scale: 0.5;
+    -ms-transform: scale(0.5);
+    /* IE 9 */
+    -moz-transform: scale(0.5);
+    /* Firefox */
+    -webkit-transform: scale(0.5);
+    /* Safari and Chrome */
+    -o-transform: scale(0.5);
+    /* Opera */
   }
 }
 @keyframes _rotate {
@@ -916,10 +937,24 @@ h4 {
 }
 @keyframes _scale {
   from {
-    scale: 1;
+    -ms-transform: scale(1);
+    /* IE 9 */
+    -moz-transform: scale(1);
+    /* Firefox */
+    -webkit-transform: scale(1);
+    /* Safari and Chrome */
+    -o-transform: scale(1);
+    /* Opera */
   }
   to {
-    scale: 1.2;
+    -ms-transform: scale(1);
+    /* IE 9 */
+    -moz-transform: scale(1);
+    /* Firefox */
+    -webkit-transform: scale(1);
+    /* Safari and Chrome */
+    -o-transform: scale(1);
+    /* Opera */
   }
 }
 @keyframes _void {
