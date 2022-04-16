@@ -91,6 +91,11 @@
   color: #9356DC;
 }
 
+.verticalCenter {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 /* -  - - - - - - -  - */
 /* header & nav */
 .ghost {
@@ -420,19 +425,20 @@ h4 {
 }
 
 .header-logo {
-  width: 100%;
-  margin: auto;
-  padding: 12px;
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+  flex-direction: row;
 }
 .header-logo img {
+  max-width: 300px;
+  margin: auto;
   animation-name: _negativeScale;
   animation-duration: 1200ms;
   animation-fill-mode: both;
 }
-.header-logo img img {
-  width: 50%;
-  margin: auto;
+.header-logo i {
+  position: relative;
+  font-size: 18px;
+  top: calc(50% - 9px);
+  padding-left: 7px;
 }
 
 .container {
