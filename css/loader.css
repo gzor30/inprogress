@@ -2,7 +2,7 @@
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.9);
   z-index: 1;
   animation: _destroy 2400ms both;
   font-size: 5em;
