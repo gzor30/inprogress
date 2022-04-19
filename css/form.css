@@ -574,12 +574,19 @@ h4 {
   display: flex;
   margin-top: auto;
   margin-bottom: auto;
+  max-width: 80%;
+}
+.container .thumb-B .thumb__txt p .soustitre {
+  max-width: 100%;
+}
+.container .thumb-B:hover p {
+  max-width: 70%;
 }
 .container .thumb-B:hover .textThumb {
   max-width: 62.6666666667vw;
 }
 .container .thumb-B:hover .soustitre {
-  max-width: 80%;
+  max-width: 62.6666666667vw;
 }
 
 /* -  - - - - - - -  - */

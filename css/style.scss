@@ -669,14 +669,22 @@ h4 {
           display: flex;
           margin-top: auto;
           margin-bottom: auto;
+          max-width: 80%;
+          & .soustitre{
+            max-width: 100%;
+          }
         }
+      }
+      &:hover p{
+        max-width: 70%;
       }
       &:hover .textThumb{
         max-width: $thumb-width-reduce;
       }
       &:hover .soustitre{
-        max-width: 80%;
+        max-width: $thumb-width-reduce;
       }
+
     }
   }
 }
